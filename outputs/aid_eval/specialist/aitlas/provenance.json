@@ -1,0 +1,23 @@
+{
+  "name": "AiTLAS AID specialist",
+  "checkpoint_id": "aid_resnet50_pretrained",
+  "checkpoint_file_id": "1F5kgByC3pKFUke7kNpHWGIePGza7qzdr",
+  "checkpoint_filename": "aid_pretrained_imagenet1K_resnet50.pth.tar",
+  "checkpoint_sha256": "19bf0c124efd5c965cf9880521f81214dd402618331fa94bebf7d9b1635f85b2",
+  "dataset": "AID single-label 30-class",
+  "train_images": 6000,
+  "validation_images": 2000,
+  "test_images": 2000,
+  "same_split_as_our_community_split": false,
+  "shared_test_images": 382,
+  "class_coverage": 30,
+  "selection": "filename intersection of our frozen test split and published AiTLAS test split; independent of predictions",
+  "paper": "https://arxiv.org/abs/2207.07189",
+  "repo": "https://github.com/biasvariancelabs/aitlas-arena",
+  "paper_reported_resnet50_test_accuracy": 0.9655,
+  "paper_reported_accuracy_is_new_run": false,
+  "checkpoint_load_verified": true,
+  "arena_repository_revision": "b640d13cd645e72d6017223ec584a3e30095fdf8",
+  "preprocessing_source_revision": "8f7ebfa6d02499e276b37a618b76670595f0aae4",
+  "preprocessing": "Resize(256), CenterCrop(224), ToTensor; no Normalize"
+}

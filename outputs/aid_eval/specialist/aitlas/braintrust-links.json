@@ -1,0 +1,9 @@
+{
+  "project": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison",
+  "dataset": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/datasets/aid-aitlas-heldout-overlap-382",
+  "experiments": {
+    "resnet50": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/aitlas-heldout-382__resnet50",
+    "luna": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/aitlas-heldout-382__luna",
+    "jev": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/aitlas-heldout-382__jev"
+  }
+}

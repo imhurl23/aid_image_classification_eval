@@ -1,0 +1,7 @@
+{
+  "test_images": 2000,
+  "unique_exact_image_hashes": 2000,
+  "exact_duplicate_groups_within_test": [],
+  "exact_hash_overlap_with_reviewed_validation_pilot": 0,
+  "scope": "Exact encoded-file hashes only; no geographic or perceptual overlap audit."
+}

@@ -1,0 +1,65 @@
+AID specialist checkpoint investigation — 2026-10-19
+
+Result: recovered and verified a runnable pretrained AID CNN; original held-out
+split remains unavailable from the inspected public artifacts.
+
+Checkpoint:
+https://huggingface.co/JavideuS/aid-image-classification
+Revision 22b95de6acf56e31d1d0baf549514a223005b83d
+File neuralNet/models/PiattiVL_v0.69.pth (14,850,482 bytes).
+
+Recovered original source:
+https://github.com/JavideuS/aerial-vision
+Revision 4b9e3f8ef79d9fff67c25ce5c9a1be58310a29d0
+Model: NeuralNets/model.py
+Test preprocessing: NeuralNets/test.py
+Original data partitioning: data_preparation.py
+Demonstration: demo.ipynb
+
+Verified:
+- Safe weights-only checkpoint load on CPU.
+- Strict state-dict match with original PiattiCNN implementation.
+- 1,232,734 parameters, 30 output classes.
+- Checkpoint class_names exactly match the existing Luna/Jev eval class order.
+- Checkpoint epoch index 85; stored validation accuracy 89.7778%.
+  This stored validation metric is different from the model-card 92.8% test claim.
+- Checkpoint keys: epoch, model_state_dict, optimizer_state_dict, val_acc,
+  num_params, num_classes, class_names. No filenames, split indices or RNG state.
+
+Preprocessing is NOT consistently specified across original entry points:
+- NeuralNets/test.py: Resize(256), CenterCrop(224), ToTensor, ImageNet normalization.
+- demo.ipynb: Resize((224,224)), ToTensor, same normalization.
+- NeuralNets/main.py: Resize(224), CenterCrop(224), same normalization.
+The recovered adapter deliberately uses test.py. It does not select preprocessing
+based on performance on our test images. This is model-native preprocessing of
+the same source image; input resolution to the CNN is 224x224.
+
+Split evidence:
+- data_preparation.py enumerates files with os.listdir and calls random.shuffle
+  without a fixed seed; it places 90% in data/train and 10% in data/test.
+- NeuralNets/train.py subsequently partitions data/train 80/20 with random_state=0.
+  That seed fixes only the inner split, not the initial train/test allocation.
+- demo.ipynb makes a new 80/20 split of data/raw with random_state=0 and unsorted
+  os.listdir input. Its stored 95.8% evaluation is not evidence of held-out performance:
+  that fresh split is not tied to the training checkpoint's original partition.
+- Reviewed all nine public Git commits, current branches/tags and available historical
+  Hub file listings. Found no train/test filename manifest, data directories, or RNG state.
+
+Practical next step:
+Recover the original data/test filename list used with this exact checkpoint from
+the author (ideally with image hashes). Evaluate all three models on that known
+held-out set, reusing our cached Luna/Jev predictions where filenames overlap.
+No contact was sent. The model is executable today, but its score on our current
+2,000-image community test split cannot be described as a clean held-out baseline.
+There is no basis to compare the model-card 92.8% directly with Luna 74.3% and Jev 79.4%.
+
+Deliverables:
+adapter.py — pinned checkpoint/source hashes, original test preprocessing, strict load.
+checkpoint-audit.json — verified checkpoint metadata and hashes.
+validation-smoke.jsonl — technical inference check only; training overlap unknown.
+
+Environment created locally under work/aid-baseline/venv; no cloud training or
+new paid model API calls. Recovered source and checkpoint live under work/aid-baseline.
+See adapter.py --help for a repeatable invocation.
+
+FOLLOW-UP: baseline resolved via AiTLAS Benchmark Arena. See aitlas/findings.txt.

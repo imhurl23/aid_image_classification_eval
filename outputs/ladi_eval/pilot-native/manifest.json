@@ -1,0 +1,33 @@
+{
+  "dataset": "MITLL/LADI-v2-dataset",
+  "dataset_revision": "5f2dbfe8c466d32edafd1bab847ec5252309acdb",
+  "split": "validation",
+  "requested_images": 5,
+  "arms": [
+    "decisions_luna",
+    "jev_multimodal"
+  ],
+  "rubric": {
+    "bridges_any": "Assess only visible evidence in this aerial image. Each question is independent. Is any bridge visible?",
+    "buildings_any": "Assess only visible evidence in this aerial image. Each question is independent. Is any building visible?",
+    "buildings_affected_or_greater": "Assess only visible evidence in this aerial image. Each question is independent. Does any building show FEMA affected-level damage or worse (affected, minor, major, or destroyed)?",
+    "buildings_minor_or_greater": "Assess only visible evidence in this aerial image. Each question is independent. Does any building show FEMA minor-level damage or worse (minor, major, or destroyed), beyond superficial affected-level damage?",
+    "debris_any": "Assess only visible evidence in this aerial image. Each question is independent. Is disaster-related debris visible?",
+    "flooding_any": "Assess only visible evidence in this aerial image. Each question is independent. Is flooding visible?",
+    "flooding_structures": "Assess only visible evidence in this aerial image. Each question is independent. Are any structures affected by flooding?",
+    "roads_any": "Assess only visible evidence in this aerial image. Each question is independent. Is any road visible?",
+    "roads_damage": "Assess only visible evidence in this aerial image. Each question is independent. Is any road visibly damaged?",
+    "trees_any": "Assess only visible evidence in this aerial image. Each question is independent. Are any trees visible?",
+    "trees_damage": "Assess only visible evidence in this aerial image. Each question is independent. Are any trees visibly damaged?",
+    "water_any": "Assess only visible evidence in this aerial image. Each question is independent. Is any body or accumulation of water visible?"
+  },
+  "rubric_hash": "b741bfa4c0dfad7545978f4d54a41c1bef7f9948572297ccf0669150966a3469",
+  "image_format": "PNG",
+  "image_condition": "native",
+  "jev_max_dimension": 1568,
+  "created_unix": 1792106903.8164392,
+  "checkpoint_revisions": {},
+  "source_shards": {
+    "data-00000-of-00040.arrow": "1c097020259263e79bdfcdd5b187672e8280440d6f9c31d34eec1bf93eda271f"
+  }
+}

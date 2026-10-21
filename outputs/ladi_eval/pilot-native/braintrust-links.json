@@ -1,0 +1,9 @@
+{
+  "project_url": "https://www.braintrust.dev/app/eval_engineering/p/ladi-v2a-decision-comparison",
+  "dataset_url": "https://www.braintrust.dev/app/eval_engineering/p/ladi-v2a-decision-comparison/datasets/ladi-validation-pilot",
+  "experiments": {
+    "decisions_luna": "https://www.braintrust.dev/app/eval_engineering/p/ladi-v2a-decision-comparison/experiments/pilot-native__decisions_luna",
+    "jev_multimodal": "https://www.braintrust.dev/app/eval_engineering/p/ladi-v2a-decision-comparison/experiments/pilot-native__jev_multimodal"
+  },
+  "verified_remote_images": 5
+}

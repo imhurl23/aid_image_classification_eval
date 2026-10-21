@@ -1,0 +1,23 @@
+AID full test protocol
+
+Frozen before test inference:
+- Exactly the 2,000 filenames in the saved community test manifest.
+- The existing pilot instructions and alphabetic 30-class option order.
+- Model IDs: gpt-6-luna on OpenAI Decisions; jev-1.14.0 on TypeSafe System One.
+- One independent 30-way Choice question per image, one image per request.
+- Identical original JPEG bytes, all 600x600; no resizing/cropping or filenames sent to APIs.
+- Primary outcome: accuracy across all 2,000 attempted images; failures count incorrect.
+- Secondary: valid-output coverage, macro F1 and log loss on valid outputs, latency p50/p95.
+- Retain raw provider responses and rounded probability sums; normalization tolerance 0.02.
+- Preserve all final failures; no selective reruns after inspecting accuracy.
+- 95% Wilson interval per accuracy; paired bootstrap interval for Jev minus Luna (10,000 replicates).
+
+Dataset snapshots, split hashes, source image hashes, instructions hash and model IDs
+are recorded in manifest.json and prediction files. API cost estimates use actual returned
+input-token usage at the standard rates checked before user authorization: Luna $0.10/M,
+Jev $0.042/M. Token totals cannot account for requests that fail before returning usage.
+
+This is the frozen community split, not an official AID split. The split is disjoint by
+filename; geographic overlap, near-duplicate imagery and foundation-model pretraining
+exposure have not been independently excluded. The specialist baseline is still pending
+verification of its training/test image IDs and is not included in the authorized API run.

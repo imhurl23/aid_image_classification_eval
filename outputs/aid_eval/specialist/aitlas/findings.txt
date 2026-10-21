@@ -1,0 +1,56 @@
+Paper trail resolution — 2026-10-19
+
+The AiTLAS Benchmark Arena paper provides the missing combination: AID-trained
+checkpoints, matching class definitions, model configurations, and fixed train /
+validation / test filename CSVs. The paper and released assets are linked from:
+https://github.com/biasvariancelabs/aitlas-arena
+Paper: https://arxiv.org/abs/2207.07189
+
+Verified downloadable artifact:
+aid_pretrained_imagenet1K_resnet50.pth.tar
+Google Drive file ID: 1F5kgByC3pKFUke7kNpHWGIePGza7qzdr
+Checkpoint id: aid_resnet50_pretrained, epoch 41. All state-dict weights strictly
+match torchvision ResNet-50 with a 30-class head. The original dataset class
+mapping matches our labels. Hashes and source revisions are in provenance.json.
+This is an AID-finetuned classifier, not just an ImageNet initialization.
+
+The paper's Table 6 reports 96.55% AID test accuracy for this model family and
+97.75% for ViT. Those are published results, not scores from our existing 2,000-image
+community split. The actual model download was verified, not merely its web link.
+
+The released CSVs have no header. We verified 6,000 / 2,000 / 2,000 rows, disjoint
+filenames, 10,000 total distinct images. Of our existing test images, 1,217 are in
+AiTLAS training, 401 are in its validation, and 382 are in its test. Therefore the
+full previous 2,000-image test set is unsuitable for this specialist checkpoint.
+
+We froze the shared 382-image test intersection before running the specialist.
+It spans all 30 classes (7–21 examples per class). Each selected file has the same
+class in both manifests. Luna and Jev use their previously saved predictions on
+exactly these images, selected without examining predictions. No paid calls were
+made. Inputs are the same original JPEGs, with the specialist's native processing.
+
+Reproduced test preprocessing from the historical AiTLAS source before checkpoint
+training: Resize(256), CenterCrop(224), ToTensor; no Normalize. Current AiTLAS has
+changed transforms, so the adapter uses the historical recipe, pinned in provenance.
+Single-label softmax, evaluation mode, float32 inference on local Apple MPS.
+
+Shared held-out subset results:
+AiTLAS ResNet-50: 96.5969% accuracy; macro F1 0.9614; 382/382 valid.
+Jev 1.14: 78.2723% accuracy; macro F1 0.7563; 382/382 valid.
+Luna Decisions: 75.3927% accuracy; macro F1 0.7516; 382/382 valid.
+
+This resolves the baseline without contacting the student model author or training
+another model. The student's original partition remains unrecoverable from its
+public artifacts, but it is no longer the necessary path forward.
+
+For a full 2,000-image three-way benchmark on the AiTLAS split, obtain the remaining
+1,618 AiTLAS test images and run Luna/Jev on them, preserving cached outputs on the
+shared 382. Do not combine the 382-image specialist score with the original 2,000-image
+Luna/Jev scores. That expanded benchmark has not been run here.
+
+The original AID paper was also read: Section 5.2 uses random train/test splits and
+ten repeated trials; Sections 4.3 and 5.3.3 use pretrained ImageNet CNN features with
+an SVM. It does not establish the later community test manifest or validate the
+student checkpoint's particular partition. The student's report specifies a 90/10
+allocation but does not provide the actual filename manifest. RSP paper/model-zoo
+was another lead, but AiTLAS supplies the split files and direct checkpoints needed.

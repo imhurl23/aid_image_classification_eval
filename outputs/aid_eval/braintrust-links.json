@@ -1,0 +1,9 @@
+{
+  "project": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison",
+  "dataset": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/datasets/aid-validation-pilot-30",
+  "experiments": {
+    "luna": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/pilot-30__luna",
+    "jev": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/pilot-30__jev"
+  },
+  "verified_images": 30
+}

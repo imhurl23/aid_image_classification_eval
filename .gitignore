@@ -1,0 +1,26 @@
+# Credentials and local runtimes
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.cache/
+.DS_Store
+# Image data and model weights remain local
+*.jpg
+*.jpeg
+*.png
+*.arrow
+*.parquet
+*.pth
+*.pth.tar
+*.ckpt
+*.pkl
+*.safetensors
+# Downloaded sources, environments, and research scratch
+work/*
+!work/aid/
+work/aid/*
+!work/aid/*.py

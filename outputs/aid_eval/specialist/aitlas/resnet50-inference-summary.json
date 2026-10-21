@@ -1,0 +1,12 @@
+{
+  "images": 382,
+  "correct": 369,
+  "device": "mps",
+  "elapsed_seconds": 4.382050125001115,
+  "checkpoint_id": "aid_resnet50_pretrained",
+  "checkpoint_epoch": 41,
+  "checkpoint_loss": 0.11892670500278472,
+  "preprocessing": "PIL Resize(256), CenterCrop(224), ToTensor; no Normalize; historical published transform",
+  "preprocessing_source_revision": "8f7ebfa6d02499e276b37a618b76670595f0aae4",
+  "accuracy": 0.9659685863874345
+}

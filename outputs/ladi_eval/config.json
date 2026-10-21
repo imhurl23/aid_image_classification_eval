@@ -1,0 +1,77 @@
+{
+  "name": "ladi-v2a-decision-comparison",
+  "status": "prepared_not_run",
+  "dataset": "MITLL/LADI-v2-dataset",
+  "dataset_revision": "5f2dbfe8c466d32edafd1bab847ec5252309acdb",
+  "development_split": "validation",
+  "evaluation_split": "test",
+  "labels": [
+    "bridges_any",
+    "buildings_any",
+    "buildings_affected_or_greater",
+    "buildings_minor_or_greater",
+    "debris_any",
+    "flooding_any",
+    "flooding_structures",
+    "roads_any",
+    "roads_damage",
+    "trees_any",
+    "trees_damage",
+    "water_any"
+  ],
+  "threshold": 0.5,
+  "primary_arms": [
+    {
+      "name": "decisions_luna",
+      "model": "gpt-6-luna",
+      "status": "implemented_pending_live_pilot"
+    },
+    {
+      "name": "jev_multimodal",
+      "model": "jev-1.14.0",
+      "status": "implemented_pending_live_pilot"
+    },
+    {
+      "name": "mitll_small_reference",
+      "model": "MITLL/LADI-v2-classifier-small-reference"
+    },
+    {
+      "name": "mitll_large_reference",
+      "model": "MITLL/LADI-v2-classifier-large-reference"
+    }
+  ],
+  "supplemental_arms": [
+    {
+      "model": "MITLL/LADI-v2-classifier-small",
+      "test_contaminated": true
+    },
+    {
+      "model": "MITLL/LADI-v2-classifier-large",
+      "test_contaminated": true
+    }
+  ],
+  "primary_metric": "macro_f1",
+  "secondary_metrics": [
+    "micro_f1",
+    "per_label_precision",
+    "per_label_recall",
+    "per_label_f1",
+    "brier_score",
+    "exact_match",
+    "coverage",
+    "latency_ms_p50",
+    "latency_ms_p95"
+  ],
+  "protocol": {
+    "input": "Primary native condition: supplied LADI resolution for Luna and MITLL (with checkpoint preprocessing); Jev aspect-preserving resize to its supported limit. Secondary matched condition: all arms receive the same Jev-sized pixels before model-specific preprocessing. Preserve source pixels and log input dimensions/hashes per arm.",
+    "output": "12 independent positive-class probabilities; no softmax across labels",
+    "development": "validate adapters and freeze rubric on validation only",
+    "test": "use official test split without prompt or threshold tuning",
+    "errors": "retain failures and report coverage; never coerce failures into negative labels",
+    "reproducibility": "pin checkpoint revisions, served API versions, rubric hash, image hashes and row IDs before running"
+  },
+  "image_conditions": {
+    "primary": "native",
+    "secondary": "matched"
+  }
+}

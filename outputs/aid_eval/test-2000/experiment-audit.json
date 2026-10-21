@@ -1,0 +1,12 @@
+{
+  "luna": {
+    "remote_rows": 2000,
+    "remote_correct": 1486,
+    "images_attached": 2000
+  },
+  "jev": {
+    "remote_rows": 2000,
+    "remote_correct": 1588,
+    "images_attached": 2000
+  }
+}

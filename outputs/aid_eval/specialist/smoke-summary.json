@@ -1,0 +1,11 @@
+{
+  "images": 30,
+  "valid_predictions": 30,
+  "unique_class_labels": 30,
+  "strict_checkpoint_load": true,
+  "class_mapping_matches_existing_eval": true,
+  "score_published_as_heldout": false,
+  "training_overlap": "unknown",
+  "cloud_training_cost": 0,
+  "new_paid_model_api_calls": 0
+}

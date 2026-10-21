@@ -1,0 +1,88 @@
+{
+  "total_images": 5,
+  "valid_images": 5,
+  "coverage": 1.0,
+  "quality_denominator": "complete valid images only; compare coverage alongside quality",
+  "latency_observations": 5,
+  "latency_ms_p50": 324.7904171003029,
+  "latency_ms_p95": 378.8949334528297,
+  "macro_f1": 0.32407407407407407,
+  "micro_f1": 0.9090909090909091,
+  "brier_score": 0.026398333333333336,
+  "exact_match": 0.4,
+  "per_label": {
+    "bridges_any": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "positive_support": 0
+    },
+    "buildings_any": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "positive_support": 3
+    },
+    "buildings_affected_or_greater": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "positive_support": 0
+    },
+    "buildings_minor_or_greater": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "positive_support": 0
+    },
+    "debris_any": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "positive_support": 0
+    },
+    "flooding_any": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "positive_support": 0
+    },
+    "flooding_structures": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "positive_support": 0
+    },
+    "roads_any": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "positive_support": 4
+    },
+    "roads_damage": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "positive_support": 0
+    },
+    "trees_any": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8888888888888888,
+      "positive_support": 4
+    },
+    "trees_damage": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "positive_support": 0
+    },
+    "water_any": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "positive_support": 4
+    }
+  },
+  "zero_division_policy": "precision, recall, F1 set to zero when undefined; inspect support"
+}

@@ -1,0 +1,29 @@
+AID full test results
+
+2,000 frozen test images; 30 classes; identical original 600x600 JPEG inputs.
+
+Luna Decisions
+Accuracy: 74.30% (95% Wilson interval 72.34%–76.17%)
+Valid outputs: 2000/2000
+Macro F1 on valid outputs: 0.7228
+Median / p95 request latency: 839 / 10758 ms
+Input tokens: 1,402,000; estimated API cost: $0.1402
+https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/test-2000__luna
+
+Jev 1.14
+Accuracy: 79.40% (95% Wilson interval 77.57%–81.12%)
+Valid outputs: 2000/2000
+Macro F1 on valid outputs: 0.7662
+Median / p95 request latency: 602 / 1192 ms
+Input tokens: 3,531,727; estimated API cost: $0.1483
+https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/test-2000__jev
+
+Jev minus Luna accuracy: 5.10 percentage points
+Paired bootstrap 95% interval: 3.40 to 6.85 percentage points
+Jev-only correct: 209; Luna-only correct: 107
+Combined estimated API cost: $0.2885
+
+https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison
+https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/datasets/aid-test-2000
+
+Limits: community test split rather than official AID split. No specialist baseline yet; its training-ID verification remains pending. Geographic overlap, near-duplicates and foundation-model pretraining exposure have not been independently excluded. Costs use returned token usage and published standard API rates, excluding Braintrust charges.
