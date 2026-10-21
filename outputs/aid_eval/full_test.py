@@ -1,4 +1,6 @@
 """Frozen AID 2,000-image test evaluation with resumable predictions and image publication."""
+import argparse
+import re
 import concurrent.futures as cf
 import hashlib
 import io
@@ -14,7 +16,12 @@ import braintrust as bt
 import eval as pilot
 
 BASE=Path(__file__).resolve().parent
-ROOT=BASE/'test-2000'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--run-name', default='test-2000', help='Unique name for new predictions and Braintrust experiments; reuse to resume')
+parser.add_argument('--env-file', type=Path, help='Optional credentials file; otherwise use environment variables')
+args=parser.parse_args()
+if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]*', args.run_name): parser.error('Invalid run name')
+ROOT=BASE/args.run_name
 ROOT.mkdir(exist_ok=True)
 (ROOT/'images').mkdir(exist_ok=True)
 CONFIG=json.loads((BASE/'config.json').read_text())
@@ -23,10 +30,11 @@ SPLITS=json.loads((BASE/'split-manifest.json').read_text())
 NAMES=sorted(SPLITS['test'])
 assert len(NAMES)==2000 and len(set(NAMES))==2000
 assert not set(NAMES)&set(SPLITS['train']) and not set(NAMES)&set(SPLITS['val'])
-KEYS={}
-for line in Path('.env').read_text().splitlines():
- if line.strip() and not line.lstrip().startswith('#') and '=' in line:
-  k,v=line.split('=',1);KEYS[k.strip()]=v.strip().strip(chr(34)).strip(chr(39))
+KEYS=dict(os.environ)
+if args.env_file:
+ for line in args.env_file.read_text().splitlines():
+  if line.strip() and not line.lstrip().startswith('#') and '=' in line:
+   k,v=line.split('=',1);KEYS[k.strip()]=v.strip().strip(chr(34)).strip(chr(39))
 for k in ['OPENAI_API_KEY','TYPESAFE_API_KEY','BRAINTRUST_API_KEY']:assert KEYS.get(k)
 pilot.ROOT=ROOT
 MANIFEST={**CONFIG,'split':'test','images':2000,'dataset_name':'aid-test-2000',
@@ -139,7 +147,7 @@ for c in cases:
 ds.flush();s=ds.summarize();links={'project':s.project_url,'dataset':s.dataset_url,'experiments':{}}
 (ROOT/'braintrust-links.json').write_text(json.dumps(links,indent=2))
 for arm in ['luna','jev']:
- ex=bt.init(project=CONFIG['project'],experiment='test-2000__'+arm,dataset=ds,update=True,description='Full frozen 2,000-image AID test run; identical original 600x600 images.',metadata={'protocol':MANIFEST,'aggregate_metrics':json.loads((ROOT/(arm+'-summary.json')).read_text()),'paired_comparison':comparison})
+ ex=bt.init(project=CONFIG['project'],experiment=args.run_name+'__'+arm,dataset=ds,update=True,description='Full frozen 2,000-image AID test run; identical original 600x600 images.',metadata={'protocol':MANIFEST,'aggregate_metrics':json.loads((ROOT/(arm+'-summary.json')).read_text()),'paired_comparison':comparison})
  for c in cases:
   r=results[arm][c['id']];ok=r['status']=='ok'
   ex.log(id=ids[c['id']],dataset_record_id=ids[c['id']],input={'image':refs[c['id']]},expected=c['label'],output={'label':r.get('label'),'probabilities':r.get('probabilities'),'status':r['status']},scores={'accuracy':correct(arm,c),'valid_output':int(ok)},metrics={'latency_ms':r['latency_ms'],'input_tokens':r.get('usage',{}).get('input_tokens',0)},metadata={k:v for k,v in r.items() if k not in ('response','probabilities')})
