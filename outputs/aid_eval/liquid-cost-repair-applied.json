@@ -1,0 +1,87 @@
+{
+  "apply": true,
+  "local": {
+    "native-fresh-01-d1/d1.jsonl": {
+      "rows": 2000,
+      "previous_usd": 0.0572,
+      "corrected_usd": 0.0286
+    },
+    "controlled-300-v1-d1-ultra/d1-ultra.jsonl": {
+      "rows": 2100,
+      "previous_usd": 0.06306300000000001,
+      "corrected_usd": 0.063063
+    },
+    "controlled-300-v1-d1/d1.jsonl": {
+      "rows": 2100,
+      "previous_usd": 0.06006,
+      "corrected_usd": 0.03003
+    },
+    "native-fresh-01-d1-ultra/d1-ultra.jsonl": {
+      "rows": 2000,
+      "previous_usd": 0.06006,
+      "corrected_usd": 0.060059999999999995
+    },
+    "web-aid-v1/predictions.jsonl": {
+      "rows": 2000,
+      "previous_usd": 0.390039712,
+      "corrected_usd": 0.378893752
+    },
+    "web-aid-v1/pre-padding-predictions.jsonl": {
+      "rows": 44,
+      "previous_usd": 0.006212332,
+      "corrected_usd": 0.006035212
+    },
+    "native-liquid-pilot-01/d1-ultra.jsonl": {
+      "rows": 30,
+      "previous_usd": 0.0009009,
+      "corrected_usd": 0.0009008999999999999
+    },
+    "native-liquid-pilot-01/d1.jsonl": {
+      "rows": 30,
+      "previous_usd": 0.000858,
+      "corrected_usd": 0.000429
+    },
+    "visual-decisions-v1/d1-ultra/paired-sharpness.jsonl": {
+      "rows": 600,
+      "previous_usd": 0.030088800000000002,
+      "corrected_usd": 0.030088800000000002
+    },
+    "visual-decisions-v1/d1-ultra/added-blur.jsonl": {
+      "rows": 600,
+      "previous_usd": 0.016884,
+      "corrected_usd": 0.016884
+    },
+    "visual-decisions-v1/d1/paired-sharpness.jsonl": {
+      "rows": 600,
+      "previous_usd": 0.028655999999999997,
+      "corrected_usd": 0.014327999999999999
+    },
+    "visual-decisions-v1/d1/added-blur.jsonl": {
+      "rows": 600,
+      "previous_usd": 0.01608,
+      "corrected_usd": 0.00804
+    }
+  },
+  "remote": {
+    "visual-decisions-v1-paired-sharpness__d1-ultra": 1798,
+    "visual-decisions-v1-paired-sharpness__d1": 1798,
+    "visual-decisions-v1-added-blur__d1": 1798,
+    "visual-decisions-v1-added-blur__d1-ultra": 1798,
+    "visual-decisions-v1-paired-sharpness__d1__pilot": 6,
+    "visual-decisions-v1-paired-sharpness__d1-ultra__pilot": 6,
+    "visual-decisions-v1-added-blur__d1__pilot": 6,
+    "visual-decisions-v1-added-blur__d1-ultra__pilot": 6,
+    "controlled-300-v1-d1-ultra__d1-ultra__resumed": 4201,
+    "controlled-300-v1-d1-ultra__d1-ultra": 6297,
+    "controlled-300-v1-d1__d1": 6300,
+    "native-fresh-01-d1__d1": 6000,
+    "native-fresh-01-d1-ultra__d1-ultra": 6000,
+    "native-liquid-pilot-01__d1-ultra": 90,
+    "native-liquid-pilot-01__d1": 90,
+    "project_logs": 3044
+  },
+  "tolerance": {
+    "relative": 1e-06,
+    "absolute_usd": 1e-12
+  }
+}

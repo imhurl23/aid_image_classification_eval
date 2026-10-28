@@ -1,0 +1,27 @@
+{
+  "images": 1000,
+  "predictions": 5000,
+  "valid": {
+    "luna": 985,
+    "jev": 1000,
+    "clef": 1000,
+    "d1": 1000,
+    "d1-ultra": 1000
+  },
+  "estimated_api_cost_usd": 0.378893752,
+  "dataset_url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/datasets/web-aid-v1",
+  "dataset_version": "1000198084446327121",
+  "accuracy_status": "Awaiting human category labels; no accuracy scores have been fabricated.",
+  "project_id": "aa1a18b9-6a22-48a4-b10d-b7b1f79c473e",
+  "review_field": "web_scene_category",
+  "review_score_id": "abed71eb-81fa-4cfe-b39d-bb1a1c165f1d",
+  "logs_url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/logs",
+  "review_filter": "metadata.batch = 'web-aid-v1' AND metadata.record_type = 'human_review'",
+  "refusals": {
+    "luna": 15,
+    "jev": 0,
+    "clef": 0,
+    "d1": 0,
+    "d1-ultra": 0
+  }
+}

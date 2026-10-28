@@ -1,4 +1,6 @@
-braintrust
+braintrust>=0.43.0
 requests
 numpy
 Pillow
+scipy
+statsmodels

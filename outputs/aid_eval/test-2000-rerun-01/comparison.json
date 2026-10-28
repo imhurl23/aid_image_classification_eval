@@ -1,0 +1,13 @@
+{
+  "images": 2000,
+  "jev_minus_luna_accuracy": 0.047,
+  "paired_bootstrap_95pct_ci": [
+    0.03,
+    0.0645
+  ],
+  "both_correct": 1377,
+  "jev_only_correct": 203,
+  "luna_only_correct": 109,
+  "bootstrap_seed": 20261016,
+  "bootstrap_replicates": 10000
+}

@@ -1,0 +1,10 @@
+{
+  "project": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison",
+  "dataset": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/datasets/aid-test-2000",
+  "experiments": {
+    "luna": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/test-2000-rerun-02__luna",
+    "jev": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/test-2000-rerun-02__jev"
+  },
+  "remote_image_rows": 2000,
+  "verified_download_samples": 20
+}

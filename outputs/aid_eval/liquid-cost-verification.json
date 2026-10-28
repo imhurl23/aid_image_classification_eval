@@ -1,0 +1,170 @@
+{
+  "visual-decisions-v1-paired-sharpness__d1-ultra": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1-ultra",
+      "n": 1798,
+      "verified_n": 1798
+    }
+  ],
+  "visual-decisions-v1-paired-sharpness__d1": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1",
+      "n": 1798,
+      "verified_n": 1798
+    }
+  ],
+  "visual-decisions-v1-added-blur__d1": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1",
+      "n": 1798,
+      "verified_n": 1798
+    }
+  ],
+  "visual-decisions-v1-added-blur__d1-ultra": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1-ultra",
+      "n": 1798,
+      "verified_n": 1798
+    }
+  ],
+  "visual-decisions-v1-paired-sharpness__d1__pilot": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1",
+      "n": 6,
+      "verified_n": 6
+    }
+  ],
+  "visual-decisions-v1-paired-sharpness__d1-ultra__pilot": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1-ultra",
+      "n": 6,
+      "verified_n": 6
+    }
+  ],
+  "visual-decisions-v1-added-blur__d1__pilot": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1",
+      "n": 6,
+      "verified_n": 6
+    }
+  ],
+  "visual-decisions-v1-added-blur__d1-ultra__pilot": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1-ultra",
+      "n": 6,
+      "verified_n": 6
+    }
+  ],
+  "controlled-300-v1-d1-ultra__d1-ultra__resumed": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1-ultra",
+      "n": 4201,
+      "verified_n": 4201
+    }
+  ],
+  "controlled-300-v1-d1-ultra__d1-ultra": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1-ultra",
+      "n": 6297,
+      "verified_n": 6297
+    }
+  ],
+  "controlled-300-v1-d1__d1": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1",
+      "n": 6300,
+      "verified_n": 6300
+    }
+  ],
+  "native-fresh-01-d1__d1": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1",
+      "n": 6000,
+      "verified_n": 6000
+    }
+  ],
+  "native-fresh-01-d1-ultra__d1-ultra": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1-ultra",
+      "n": 6000,
+      "verified_n": 6000
+    }
+  ],
+  "native-liquid-pilot-01__d1-ultra": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1-ultra",
+      "n": 90,
+      "verified_n": 90
+    }
+  ],
+  "native-liquid-pilot-01__d1": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1",
+      "n": 90,
+      "verified_n": 90
+    }
+  ],
+  "project_logs": [
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1-ultra",
+      "n": 1022,
+      "verified_n": 1022
+    },
+    {
+      "discrepancies": 0,
+      "max_ratio": 1,
+      "min_ratio": 1,
+      "model": "d1",
+      "n": 1022,
+      "verified_n": 1022
+    }
+  ]
+}

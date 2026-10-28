@@ -1,0 +1,78 @@
+{
+  "dataset": "aid-controlled-300-v1",
+  "dataset_version": "1000198078684663546",
+  "models": [
+    "clef"
+  ],
+  "trials": 1,
+  "instructions": "Classify the overall aerial scene in the image into exactly one of the supplied AID scene classes. Select the class that best describes the scene as a whole, rather than every object visible. Use only the image.",
+  "labels": [
+    "Airport",
+    "BareLand",
+    "BaseballField",
+    "Beach",
+    "Bridge",
+    "Center",
+    "Church",
+    "Commercial",
+    "DenseResidential",
+    "Desert",
+    "Farmland",
+    "Forest",
+    "Industrial",
+    "Meadow",
+    "MediumResidential",
+    "Mountain",
+    "Park",
+    "Parking",
+    "Playground",
+    "Pond",
+    "Port",
+    "RailwayStation",
+    "Resort",
+    "River",
+    "School",
+    "SparseResidential",
+    "Square",
+    "Stadium",
+    "StorageTanks",
+    "Viaduct"
+  ],
+  "image_policy": "All controls and transformed variants are 600x600 RGB lossless PNG; control preserves decoded RGB pixels; no resizing.",
+  "prices_per_million_input_tokens": {
+    "luna": 0.1,
+    "jev": 0.042,
+    "clef": 0.24,
+    "d1": 0.04,
+    "d1-ultra": 0.042
+  },
+  "retry_policy": "3 attempts; 429/5xx and transport errors",
+  "scoring": "Failed requests count as incorrect; same 30-way choice validation as original eval",
+  "transform_protocol": {
+    "selection": "10 per class from test, lowest SHA256(seed+filename); independent of predictions",
+    "seed": "aid-controlled-20261022-v1",
+    "images": 300,
+    "conditions": [
+      "control",
+      "blur_1",
+      "blur_2",
+      "contrast_0.5",
+      "contrast_1.5",
+      "shift_left_60",
+      "shift_right_60"
+    ],
+    "variant_rows": 2100,
+    "image_policy": "All controls and transformed variants are 600x600 RGB lossless PNG; control preserves decoded RGB pixels; no resizing.",
+    "transformations": {
+      "blur": "Pillow GaussianBlur radius 1 or 2 pixels",
+      "contrast": "Pillow ImageEnhance.Contrast factors 0.5 and 1.5",
+      "shift": "60 pixels left/right with reflected fill; crops 60 original boundary pixels, so this is not pure object-position isolation"
+    },
+    "analysis": "Paired accuracy changes vs fresh control; McNemar tests; pairwise differences of change via paired randomization; Holm across 30 within-model and 60 between-model tests.",
+    "notes": [
+      "Equal-class balanced subset; accuracy is not directly comparable to the full test split.",
+      "Ground truth held fixed; stronger transforms may remove discriminative evidence.",
+      "Single stochastic response per model/image/condition; repeat on independent data to confirm."
+    ]
+  }
+}

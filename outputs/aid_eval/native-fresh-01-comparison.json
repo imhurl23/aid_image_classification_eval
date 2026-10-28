@@ -1,0 +1,158 @@
+{
+  "models": {
+    "luna": {
+      "accuracy_all_attempts": 0.743,
+      "valid": 2000,
+      "estimated_api_cost_usd": 0.14020000000000002,
+      "experiment_url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/native-fresh-01-luna__luna"
+    },
+    "jev": {
+      "accuracy_all_attempts": 0.7895,
+      "valid": 2000,
+      "estimated_api_cost_usd": 0.14832497400000003,
+      "experiment_url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/native-fresh-01-jev__jev"
+    },
+    "clef": {
+      "accuracy_all_attempts": 0.7805,
+      "valid": 2000,
+      "estimated_api_cost_usd": 0.50256,
+      "experiment_url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/native-fresh-01-clef__clef"
+    },
+    "d1": {
+      "accuracy_all_attempts": 0.7725,
+      "valid": 2000,
+      "estimated_api_cost_usd": 0.0286,
+      "experiment_url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/native-fresh-01-d1__d1"
+    },
+    "d1-ultra": {
+      "accuracy_all_attempts": 0.7895,
+      "valid": 2000,
+      "estimated_api_cost_usd": 0.060059999999999995,
+      "experiment_url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/native-fresh-01-d1-ultra__d1-ultra"
+    }
+  },
+  "paired_comparisons": {
+    "luna_minus_jev": {
+      "accuracy_difference": -0.0465,
+      "paired_bootstrap_95pct_ci": [
+        -0.064,
+        -0.0295
+      ],
+      "note": "Pairwise intervals, not adjusted for multiple comparisons"
+    },
+    "luna_minus_clef": {
+      "accuracy_difference": -0.0375,
+      "paired_bootstrap_95pct_ci": [
+        -0.0555,
+        -0.02
+      ],
+      "note": "Pairwise intervals, not adjusted for multiple comparisons"
+    },
+    "luna_minus_d1": {
+      "accuracy_difference": -0.0295,
+      "paired_bootstrap_95pct_ci": [
+        -0.0475,
+        -0.012
+      ],
+      "note": "Pairwise intervals, not adjusted for multiple comparisons"
+    },
+    "luna_minus_d1-ultra": {
+      "accuracy_difference": -0.0465,
+      "paired_bootstrap_95pct_ci": [
+        -0.064,
+        -0.0285
+      ],
+      "note": "Pairwise intervals, not adjusted for multiple comparisons"
+    },
+    "jev_minus_clef": {
+      "accuracy_difference": 0.009,
+      "paired_bootstrap_95pct_ci": [
+        -0.0065,
+        0.0245
+      ],
+      "note": "Pairwise intervals, not adjusted for multiple comparisons"
+    },
+    "jev_minus_d1": {
+      "accuracy_difference": 0.017,
+      "paired_bootstrap_95pct_ci": [
+        0.0005,
+        0.034
+      ],
+      "note": "Pairwise intervals, not adjusted for multiple comparisons"
+    },
+    "jev_minus_d1-ultra": {
+      "accuracy_difference": 0.0,
+      "paired_bootstrap_95pct_ci": [
+        -0.0165,
+        0.0165
+      ],
+      "note": "Pairwise intervals, not adjusted for multiple comparisons"
+    },
+    "clef_minus_d1": {
+      "accuracy_difference": 0.008,
+      "paired_bootstrap_95pct_ci": [
+        -0.007,
+        0.0235
+      ],
+      "note": "Pairwise intervals, not adjusted for multiple comparisons"
+    },
+    "clef_minus_d1-ultra": {
+      "accuracy_difference": -0.009,
+      "paired_bootstrap_95pct_ci": [
+        -0.0245,
+        0.007
+      ],
+      "note": "Pairwise intervals, not adjusted for multiple comparisons"
+    },
+    "d1_minus_d1-ultra": {
+      "accuracy_difference": -0.017,
+      "paired_bootstrap_95pct_ci": [
+        -0.0335,
+        -0.0005
+      ],
+      "note": "Pairwise intervals, not adjusted for multiple comparisons"
+    }
+  },
+  "bootstrap_replicates": 10000,
+  "seed": 20261021,
+  "protocol": {
+    "dataset": "aid-test-2000",
+    "dataset_version": "1000198073523310044",
+    "instructions": "Classify the overall aerial scene in the image into exactly one of the supplied AID scene classes. Select the class that best describes the scene as a whole, rather than every object visible. Use only the image.",
+    "labels": [
+      "Airport",
+      "BareLand",
+      "BaseballField",
+      "Beach",
+      "Bridge",
+      "Center",
+      "Church",
+      "Commercial",
+      "DenseResidential",
+      "Desert",
+      "Farmland",
+      "Forest",
+      "Industrial",
+      "Meadow",
+      "MediumResidential",
+      "Mountain",
+      "Park",
+      "Parking",
+      "Playground",
+      "Pond",
+      "Port",
+      "RailwayStation",
+      "Resort",
+      "River",
+      "School",
+      "SparseResidential",
+      "Square",
+      "Stadium",
+      "StorageTanks",
+      "Viaduct"
+    ],
+    "trials": 1,
+    "retry_policy": "3 attempts; 429/5xx and transport errors",
+    "image_policy": "Original image bytes, detected MIME type; no client resizing; provider preprocessing applies"
+  }
+}

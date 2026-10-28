@@ -1,0 +1,67 @@
+{
+  "luna": {
+    "rows": 2100,
+    "conditions": {
+      "contrast_1.5": 300,
+      "blur_2": 300,
+      "blur_1": 300,
+      "contrast_0.5": 300,
+      "shift_left_60": 300,
+      "shift_right_60": 300,
+      "control": 300
+    },
+    "replayed_rows": 2099
+  },
+  "jev": {
+    "rows": 2100,
+    "conditions": {
+      "blur_1": 300,
+      "shift_left_60": 300,
+      "control": 300,
+      "shift_right_60": 300,
+      "contrast_1.5": 300,
+      "blur_2": 300,
+      "contrast_0.5": 300
+    },
+    "replayed_rows": 0
+  },
+  "clef": {
+    "rows": 2100,
+    "conditions": {
+      "blur_1": 300,
+      "shift_left_60": 300,
+      "control": 300,
+      "shift_right_60": 300,
+      "contrast_1.5": 300,
+      "blur_2": 300,
+      "contrast_0.5": 300
+    },
+    "replayed_rows": 0
+  },
+  "d1": {
+    "rows": 2100,
+    "conditions": {
+      "blur_1": 300,
+      "shift_left_60": 300,
+      "control": 300,
+      "shift_right_60": 300,
+      "contrast_1.5": 300,
+      "blur_2": 300,
+      "contrast_0.5": 300
+    },
+    "replayed_rows": 0
+  },
+  "d1-ultra": {
+    "rows": 2100,
+    "conditions": {
+      "shift_right_60": 300,
+      "contrast_1.5": 300,
+      "control": 300,
+      "shift_left_60": 300,
+      "blur_1": 300,
+      "blur_2": 300,
+      "contrast_0.5": 300
+    },
+    "replayed_rows": 2099
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "dataset": "aid-test-2000",
+  "dataset_version": "1000198073523310044",
+  "models": [
+    "d1-ultra"
+  ],
+  "trials": 1,
+  "instructions": "Classify the overall aerial scene in the image into exactly one of the supplied AID scene classes. Select the class that best describes the scene as a whole, rather than every object visible. Use only the image.",
+  "labels": [
+    "Airport",
+    "BareLand",
+    "BaseballField",
+    "Beach",
+    "Bridge",
+    "Center",
+    "Church",
+    "Commercial",
+    "DenseResidential",
+    "Desert",
+    "Farmland",
+    "Forest",
+    "Industrial",
+    "Meadow",
+    "MediumResidential",
+    "Mountain",
+    "Park",
+    "Parking",
+    "Playground",
+    "Pond",
+    "Port",
+    "RailwayStation",
+    "Resort",
+    "River",
+    "School",
+    "SparseResidential",
+    "Square",
+    "Stadium",
+    "StorageTanks",
+    "Viaduct"
+  ],
+  "image_policy": "Original image bytes, detected MIME type; no client resizing; provider preprocessing applies",
+  "prices_per_million_input_tokens": {
+    "luna": 0.1,
+    "jev": 0.042,
+    "clef": 0.24,
+    "d1": 0.04,
+    "d1-ultra": 0.042
+  },
+  "retry_policy": "3 attempts; 429/5xx and transport errors",
+  "scoring": "Failed requests count as incorrect; same 30-way choice validation as original eval"
+}

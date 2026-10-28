@@ -1,0 +1,23 @@
+{
+  "sources": 300,
+  "rows_per_task": 600,
+  "specs": {
+    "added-blur": {
+      "instructions": "Determine whether additional Gaussian blur has been applied to this aerial image. Choose added_blur if it appears to have been smoothed by an additional Gaussian blur of radius 2 pixels at its 600 by 600 resolution; otherwise choose original. The source photographs can already contain natural softness. Use visual evidence only.",
+      "criteria": {
+        "original": "Original aerial photograph without the additional blur treatment",
+        "added_blur": "Aerial photograph with additional Gaussian blur, radius 2 pixels"
+      }
+    },
+    "paired-sharpness": {
+      "instructions": "The first image is A and the second image is B. They show the same aerial scene. Which image is sharper, with better-preserved fine detail and less blur? Choose A or B. Judge sharpness only, not scene content, brightness, or contrast.",
+      "criteria": {
+        "A": "The first image is sharper",
+        "B": "The second image is sharper"
+      }
+    }
+  },
+  "image_policy": "Existing 600x600 lossless PNG controls and GaussianBlur radius 2 variants; no resizing. No filenames, labels, or condition metadata sent to models.",
+  "analysis": "Source-cluster paired exact sign flips across 20 model comparisons, Holm family-wise correction. Source-cluster bootstrap 95% intervals. Both pair orders; descriptive position and consistency diagnostics.",
+  "limitations": "Added-blur ground truth is treatment assignment, not human perceptual blur labels. Same exploratory 300 sources as robustness experiment; original is the operational sharper reference, not human adjudication."
+}

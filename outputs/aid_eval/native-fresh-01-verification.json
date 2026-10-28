@@ -1,0 +1,72 @@
+{
+  "luna": {
+    "remote_rows": 2000,
+    "correct": 1486,
+    "image_types": {
+      "image/jpeg": 1905,
+      "image/png": 95
+    },
+    "trace_span_types": {
+      "score": 4000,
+      "llm": 2000,
+      "task": 2000,
+      "eval": 2000
+    }
+  },
+  "jev": {
+    "remote_rows": 2000,
+    "correct": 1579,
+    "image_types": {
+      "image/jpeg": 1905,
+      "image/png": 95
+    },
+    "trace_span_types": {
+      "score": 4000,
+      "llm": 2000,
+      "task": 2000,
+      "eval": 2000
+    }
+  },
+  "clef": {
+    "remote_rows": 2000,
+    "correct": 1561,
+    "image_types": {
+      "image/jpeg": 1905,
+      "image/png": 95
+    },
+    "trace_span_types": {
+      "score": 4000,
+      "llm": 2000,
+      "task": 2000,
+      "eval": 2000
+    }
+  },
+  "d1": {
+    "remote_rows": 2000,
+    "correct": 1545,
+    "image_types": {
+      "image/jpeg": 1905,
+      "image/png": 95
+    },
+    "trace_span_types": {
+      "score": 4000,
+      "llm": 2000,
+      "task": 2000,
+      "eval": 2000
+    }
+  },
+  "d1-ultra": {
+    "remote_rows": 2000,
+    "correct": 1579,
+    "image_types": {
+      "image/jpeg": 1905,
+      "image/png": 95
+    },
+    "trace_span_types": {
+      "score": 4000,
+      "llm": 2000,
+      "task": 2000,
+      "eval": 2000
+    }
+  }
+}

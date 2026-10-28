@@ -1,0 +1,7 @@
+{
+  "project_id": "aa1a18b9-6a22-48a4-b10d-b7b1f79c473e",
+  "review_field": "web_scene_category",
+  "review_score_id": "abed71eb-81fa-4cfe-b39d-bb1a1c165f1d",
+  "logs_url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/logs",
+  "review_filter": "metadata.batch = 'web-aid-v1' AND metadata.record_type = 'human_review'"
+}

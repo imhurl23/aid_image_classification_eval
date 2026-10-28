@@ -1,0 +1,6 @@
+{
+  "verified_rows": 5000,
+  "instruction_matches_original": true,
+  "categories_separate_in_decision_schema": true,
+  "new_model_calls": 0
+}

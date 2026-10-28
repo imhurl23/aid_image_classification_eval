@@ -1,0 +1,1917 @@
+{
+  "images": 2000,
+  "features": [
+    "brightness",
+    "contrast",
+    "sharpness",
+    "entropy",
+    "edge_density",
+    "detail_offset",
+    "central_detail",
+    "clipped_fraction"
+  ],
+  "feature_means": {
+    "brightness": 0.40176321086175415,
+    "contrast": 0.14651906053786148,
+    "sharpness": 6.229842521270354,
+    "entropy": 6.816488022466407,
+    "edge_density": 0.23082017500000027,
+    "detail_offset": 0.05238388984535316,
+    "central_detail": 0.23776511932265035,
+    "clipped_fraction": 0.009505551388888915
+  },
+  "feature_sd": {
+    "brightness": 0.1182026633447132,
+    "contrast": 0.05545293239966423,
+    "sharpness": 1.3430117356903386,
+    "entropy": 0.6769975254428166,
+    "edge_density": 0.13738066700043636,
+    "detail_offset": 0.047788866988272644,
+    "central_detail": 0.05428753428609794,
+    "clipped_fraction": 0.023905627855375512
+  },
+  "method": "Linear probability regressions with 30 scene-class fixed effects and all eight standardized image properties; HC3 robust SE. Paired model differences regress correctness(A)-correctness(B) on the same design. Holm correction across all 120 coefficient tests.",
+  "tests": [
+    {
+      "target": "luna",
+      "kind": "accuracy",
+      "feature": "brightness",
+      "effect_pp_per_sd": -2.1319614462805827,
+      "unadjusted_95pct_ci_pp": [
+        -4.3875921319538564,
+        0.1236692393926906
+      ],
+      "p": 0.06395330667512238,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna",
+      "kind": "accuracy",
+      "feature": "contrast",
+      "effect_pp_per_sd": 3.589047155060004,
+      "unadjusted_95pct_ci_pp": [
+        -0.07686258620569625,
+        7.254956896325703
+      ],
+      "p": 0.05500082484456431,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna",
+      "kind": "accuracy",
+      "feature": "sharpness",
+      "effect_pp_per_sd": -0.6743178894833564,
+      "unadjusted_95pct_ci_pp": [
+        -3.827709361105003,
+        2.47907358213829
+      ],
+      "p": 0.6751309042669797,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna",
+      "kind": "accuracy",
+      "feature": "entropy",
+      "effect_pp_per_sd": 0.9247592266135718,
+      "unadjusted_95pct_ci_pp": [
+        -3.212874507039566,
+        5.06239296026671
+      ],
+      "p": 0.6613492814246993,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna",
+      "kind": "accuracy",
+      "feature": "edge_density",
+      "effect_pp_per_sd": -2.8486768678111485,
+      "unadjusted_95pct_ci_pp": [
+        -6.206404267584537,
+        0.5090505319622394
+      ],
+      "p": 0.09634800741486603,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna",
+      "kind": "accuracy",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": -0.33651956751376816,
+      "unadjusted_95pct_ci_pp": [
+        -1.9208735802965233,
+        1.247834445268987
+      ],
+      "p": 0.677190651019796,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna",
+      "kind": "accuracy",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -0.2888409831844213,
+      "unadjusted_95pct_ci_pp": [
+        -2.0868890682240826,
+        1.5092071018552402
+      ],
+      "p": 0.7528744970902574,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna",
+      "kind": "accuracy",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": -0.33604964010852323,
+      "unadjusted_95pct_ci_pp": [
+        -1.6243835948818584,
+        0.952284314664812
+      ],
+      "p": 0.6091844580374042,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev",
+      "kind": "accuracy",
+      "feature": "brightness",
+      "effect_pp_per_sd": -1.6925236999659143,
+      "unadjusted_95pct_ci_pp": [
+        -3.7738613812357005,
+        0.38881398130387185
+      ],
+      "p": 0.11097550931463686,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev",
+      "kind": "accuracy",
+      "feature": "contrast",
+      "effect_pp_per_sd": -1.7871660984918325,
+      "unadjusted_95pct_ci_pp": [
+        -4.949981561671959,
+        1.3756493646882937
+      ],
+      "p": 0.268082858901862,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev",
+      "kind": "accuracy",
+      "feature": "sharpness",
+      "effect_pp_per_sd": 2.245727479646593,
+      "unadjusted_95pct_ci_pp": [
+        -0.7556799007528585,
+        5.247134860046045
+      ],
+      "p": 0.14251383946703247,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev",
+      "kind": "accuracy",
+      "feature": "entropy",
+      "effect_pp_per_sd": 4.653690675820266,
+      "unadjusted_95pct_ci_pp": [
+        0.8753591510667944,
+        8.432022200573737
+      ],
+      "p": 0.015776470264884532,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev",
+      "kind": "accuracy",
+      "feature": "edge_density",
+      "effect_pp_per_sd": -4.516365041857854,
+      "unadjusted_95pct_ci_pp": [
+        -7.812772537124971,
+        -1.219957546590738
+      ],
+      "p": 0.007246014021423681,
+      "p_holm": 0.8332916124637233,
+      "significant": false
+    },
+    {
+      "target": "jev",
+      "kind": "accuracy",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": 0.005284040402958254,
+      "unadjusted_95pct_ci_pp": [
+        -1.3564568826325594,
+        1.367024963438476
+      ],
+      "p": 0.9939318597983774,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev",
+      "kind": "accuracy",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -1.7997876330108569,
+      "unadjusted_95pct_ci_pp": [
+        -3.625043901268315,
+        0.025468635246601173
+      ],
+      "p": 0.05328355555670606,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev",
+      "kind": "accuracy",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": 0.25075734115703047,
+      "unadjusted_95pct_ci_pp": [
+        -1.0319198658708986,
+        1.5334345481849596
+      ],
+      "p": 0.7015983835971373,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef",
+      "kind": "accuracy",
+      "feature": "brightness",
+      "effect_pp_per_sd": 1.5441969993638625,
+      "unadjusted_95pct_ci_pp": [
+        -0.451243751228716,
+        3.539637749956441
+      ],
+      "p": 0.1293316194984521,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef",
+      "kind": "accuracy",
+      "feature": "contrast",
+      "effect_pp_per_sd": -0.4237972615150836,
+      "unadjusted_95pct_ci_pp": [
+        -3.5394918501263737,
+        2.6918973270962065
+      ],
+      "p": 0.7897813096473992,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef",
+      "kind": "accuracy",
+      "feature": "sharpness",
+      "effect_pp_per_sd": 3.986743057503603,
+      "unadjusted_95pct_ci_pp": [
+        1.0580837640502234,
+        6.915402350956983
+      ],
+      "p": 0.007628798912002685,
+      "p_holm": 0.8696830759683061,
+      "significant": false
+    },
+    {
+      "target": "clef",
+      "kind": "accuracy",
+      "feature": "entropy",
+      "effect_pp_per_sd": 4.283764061414624,
+      "unadjusted_95pct_ci_pp": [
+        0.5642578332963013,
+        8.003270289532948
+      ],
+      "p": 0.023989639743304557,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef",
+      "kind": "accuracy",
+      "feature": "edge_density",
+      "effect_pp_per_sd": -5.169231596734174,
+      "unadjusted_95pct_ci_pp": [
+        -8.30123611764288,
+        -2.037227075825468
+      ],
+      "p": 0.0012171441816255712,
+      "p_holm": 0.144840157613443,
+      "significant": false
+    },
+    {
+      "target": "clef",
+      "kind": "accuracy",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": 0.41165474856928125,
+      "unadjusted_95pct_ci_pp": [
+        -0.8994370027501716,
+        1.7227464998887339
+      ],
+      "p": 0.5382993449506843,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef",
+      "kind": "accuracy",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -0.18909230422799583,
+      "unadjusted_95pct_ci_pp": [
+        -1.8442756027817606,
+        1.466090994325769
+      ],
+      "p": 0.8228263877427626,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef",
+      "kind": "accuracy",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": 0.45985399035997804,
+      "unadjusted_95pct_ci_pp": [
+        -0.4614921097844577,
+        1.3812000905044137
+      ],
+      "p": 0.3279558249769591,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1",
+      "kind": "accuracy",
+      "feature": "brightness",
+      "effect_pp_per_sd": -0.8111290273408107,
+      "unadjusted_95pct_ci_pp": [
+        -2.74603488834374,
+        1.123776833662119
+      ],
+      "p": 0.4112854566797386,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1",
+      "kind": "accuracy",
+      "feature": "contrast",
+      "effect_pp_per_sd": -1.201456063115795,
+      "unadjusted_95pct_ci_pp": [
+        -4.646980822483085,
+        2.2440686962514955
+      ],
+      "p": 0.49432863685745343,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1",
+      "kind": "accuracy",
+      "feature": "sharpness",
+      "effect_pp_per_sd": -0.9369529841159223,
+      "unadjusted_95pct_ci_pp": [
+        -3.912236795556333,
+        2.0383308273244882
+      ],
+      "p": 0.5370919685791727,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1",
+      "kind": "accuracy",
+      "feature": "entropy",
+      "effect_pp_per_sd": 3.458579831850465,
+      "unadjusted_95pct_ci_pp": [
+        -0.6125449771886442,
+        7.529704640889573
+      ],
+      "p": 0.09589956912421202,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1",
+      "kind": "accuracy",
+      "feature": "edge_density",
+      "effect_pp_per_sd": -1.1900068531813763,
+      "unadjusted_95pct_ci_pp": [
+        -4.3853962340015835,
+        2.0053825276388304
+      ],
+      "p": 0.465440625123268,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1",
+      "kind": "accuracy",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": 0.0017245456722976213,
+      "unadjusted_95pct_ci_pp": [
+        -1.541649836496465,
+        1.5450989278410603
+      ],
+      "p": 0.9982526044772586,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1",
+      "kind": "accuracy",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -1.4812942644455527,
+      "unadjusted_95pct_ci_pp": [
+        -3.173995475195056,
+        0.21140694630395057
+      ],
+      "p": 0.08631264781550822,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1",
+      "kind": "accuracy",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": 0.25465667640160355,
+      "unadjusted_95pct_ci_pp": [
+        -0.7827802090226408,
+        1.2920935618258478
+      ],
+      "p": 0.6304406132015548,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1-ultra",
+      "kind": "accuracy",
+      "feature": "brightness",
+      "effect_pp_per_sd": -1.0206205071210248,
+      "unadjusted_95pct_ci_pp": [
+        -2.9402097161236913,
+        0.8989687018816414
+      ],
+      "p": 0.29737123025657464,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1-ultra",
+      "kind": "accuracy",
+      "feature": "contrast",
+      "effect_pp_per_sd": 2.7275409933470467,
+      "unadjusted_95pct_ci_pp": [
+        -0.4657538937302433,
+        5.920835880424337
+      ],
+      "p": 0.09411173895056119,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1-ultra",
+      "kind": "accuracy",
+      "feature": "sharpness",
+      "effect_pp_per_sd": -2.859837898595993,
+      "unadjusted_95pct_ci_pp": [
+        -5.683037198382331,
+        -0.03663859880965528
+      ],
+      "p": 0.047100009879474256,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1-ultra",
+      "kind": "accuracy",
+      "feature": "entropy",
+      "effect_pp_per_sd": 2.575458454331187,
+      "unadjusted_95pct_ci_pp": [
+        -0.9375897959267812,
+        6.088506704589156
+      ],
+      "p": 0.1507539507440719,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1-ultra",
+      "kind": "accuracy",
+      "feature": "edge_density",
+      "effect_pp_per_sd": -2.158339858302549,
+      "unadjusted_95pct_ci_pp": [
+        -5.1409130703939185,
+        0.8242333537888203
+      ],
+      "p": 0.15609489937751753,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1-ultra",
+      "kind": "accuracy",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": -0.07965999746481506,
+      "unadjusted_95pct_ci_pp": [
+        -1.5075700289798215,
+        1.3482500340501913
+      ],
+      "p": 0.9129311310186644,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1-ultra",
+      "kind": "accuracy",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -0.11259010141379602,
+      "unadjusted_95pct_ci_pp": [
+        -1.7897418276093344,
+        1.5645616247817424
+      ],
+      "p": 0.89531984500884,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1-ultra",
+      "kind": "accuracy",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": -0.5218397048442235,
+      "unadjusted_95pct_ci_pp": [
+        -1.670283852982164,
+        0.626604443293717
+      ],
+      "p": 0.37315189811118277,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_jev",
+      "kind": "paired_difference",
+      "feature": "brightness",
+      "effect_pp_per_sd": -0.43943774631466803,
+      "unadjusted_95pct_ci_pp": [
+        -3.1691125062028473,
+        2.290237013573511
+      ],
+      "p": 0.7523626476532163,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_jev",
+      "kind": "paired_difference",
+      "feature": "contrast",
+      "effect_pp_per_sd": 5.376213253551836,
+      "unadjusted_95pct_ci_pp": [
+        1.4792426666220013,
+        9.273183840481671
+      ],
+      "p": 0.0068522147505801195,
+      "p_holm": 0.7948569110672938,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_jev",
+      "kind": "paired_difference",
+      "feature": "sharpness",
+      "effect_pp_per_sd": -2.9200453691299515,
+      "unadjusted_95pct_ci_pp": [
+        -6.612611568749932,
+        0.7725208304900286
+      ],
+      "p": 0.12116061770258826,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_jev",
+      "kind": "paired_difference",
+      "feature": "entropy",
+      "effect_pp_per_sd": -3.7289314492066934,
+      "unadjusted_95pct_ci_pp": [
+        -8.68649080359401,
+        1.2286279051806237
+      ],
+      "p": 0.14042029320817195,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_jev",
+      "kind": "paired_difference",
+      "feature": "edge_density",
+      "effect_pp_per_sd": 1.6676881740467053,
+      "unadjusted_95pct_ci_pp": [
+        -2.1767342050813743,
+        5.512110553174785
+      ],
+      "p": 0.3952022112645752,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_jev",
+      "kind": "paired_difference",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": -0.3418036079167266,
+      "unadjusted_95pct_ci_pp": [
+        -1.903077151346159,
+        1.2194699355127059
+      ],
+      "p": 0.667859642004544,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_jev",
+      "kind": "paired_difference",
+      "feature": "central_detail",
+      "effect_pp_per_sd": 1.510946649826435,
+      "unadjusted_95pct_ci_pp": [
+        -0.6962267501347852,
+        3.718120049787655
+      ],
+      "p": 0.1796879280695517,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_jev",
+      "kind": "paired_difference",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": -0.5868069812655542,
+      "unadjusted_95pct_ci_pp": [
+        -1.814591706981493,
+        0.6409777444503846
+      ],
+      "p": 0.3488900166882758,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_clef",
+      "kind": "paired_difference",
+      "feature": "brightness",
+      "effect_pp_per_sd": -3.676158445644445,
+      "unadjusted_95pct_ci_pp": [
+        -6.407203912047729,
+        -0.9451129792411608
+      ],
+      "p": 0.00833389496741386,
+      "p_holm": 0.9417301313177663,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_clef",
+      "kind": "paired_difference",
+      "feature": "contrast",
+      "effect_pp_per_sd": 4.012844416575087,
+      "unadjusted_95pct_ci_pp": [
+        -0.08370016977075345,
+        8.109389002920928
+      ],
+      "p": 0.054868231904341064,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_clef",
+      "kind": "paired_difference",
+      "feature": "sharpness",
+      "effect_pp_per_sd": -4.661060946986958,
+      "unadjusted_95pct_ci_pp": [
+        -8.547351660143354,
+        -0.7747702338305629
+      ],
+      "p": 0.018738030850907417,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_clef",
+      "kind": "paired_difference",
+      "feature": "entropy",
+      "effect_pp_per_sd": -3.359004834801052,
+      "unadjusted_95pct_ci_pp": [
+        -8.433929724811778,
+        1.715920055209675
+      ],
+      "p": 0.19453961171181222,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_clef",
+      "kind": "paired_difference",
+      "feature": "edge_density",
+      "effect_pp_per_sd": 2.3205547289230215,
+      "unadjusted_95pct_ci_pp": [
+        -1.5596733889495618,
+        6.2007828467956045
+      ],
+      "p": 0.2411374278002021,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_clef",
+      "kind": "paired_difference",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": -0.7481743160830497,
+      "unadjusted_95pct_ci_pp": [
+        -2.5811489773125125,
+        1.0848003451464128
+      ],
+      "p": 0.4237060606845434,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_clef",
+      "kind": "paired_difference",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -0.09974867895642583,
+      "unadjusted_95pct_ci_pp": [
+        -2.2350134258640977,
+        2.0355160679512463
+      ],
+      "p": 0.9270480135596841,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_clef",
+      "kind": "paired_difference",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": -0.7959036304685005,
+      "unadjusted_95pct_ci_pp": [
+        -2.204855080221229,
+        0.6130478192842279
+      ],
+      "p": 0.26822237621364253,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1",
+      "kind": "paired_difference",
+      "feature": "brightness",
+      "effect_pp_per_sd": -1.3208324189397704,
+      "unadjusted_95pct_ci_pp": [
+        -3.883665083177702,
+        1.242000245298161
+      ],
+      "p": 0.3124349152425753,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1",
+      "kind": "paired_difference",
+      "feature": "contrast",
+      "effect_pp_per_sd": 4.7905032181757985,
+      "unadjusted_95pct_ci_pp": [
+        0.586091645068175,
+        8.994914791283422
+      ],
+      "p": 0.025536983566397897,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1",
+      "kind": "paired_difference",
+      "feature": "sharpness",
+      "effect_pp_per_sd": 0.262635094632565,
+      "unadjusted_95pct_ci_pp": [
+        -3.1874875660088993,
+        3.7127577552740294
+      ],
+      "p": 0.8813965002498002,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1",
+      "kind": "paired_difference",
+      "feature": "entropy",
+      "effect_pp_per_sd": -2.5338206052368912,
+      "unadjusted_95pct_ci_pp": [
+        -7.445517017673551,
+        2.377875807199769
+      ],
+      "p": 0.31197043266110214,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1",
+      "kind": "paired_difference",
+      "feature": "edge_density",
+      "effect_pp_per_sd": -1.6586700146297733,
+      "unadjusted_95pct_ci_pp": [
+        -5.298631583339011,
+        1.9812915540794647
+      ],
+      "p": 0.371791293302724,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1",
+      "kind": "paired_difference",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": -0.3382441131860654,
+      "unadjusted_95pct_ci_pp": [
+        -2.1023794597358942,
+        1.4258912333637634
+      ],
+      "p": 0.7070722396604494,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1",
+      "kind": "paired_difference",
+      "feature": "central_detail",
+      "effect_pp_per_sd": 1.192453281261131,
+      "unadjusted_95pct_ci_pp": [
+        -0.8046523083693413,
+        3.189558870891603
+      ],
+      "p": 0.2418897671269713,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1",
+      "kind": "paired_difference",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": -0.5907063165101264,
+      "unadjusted_95pct_ci_pp": [
+        -1.9373606354070187,
+        0.7559480023867661
+      ],
+      "p": 0.3899362607321758,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "brightness",
+      "effect_pp_per_sd": -1.1113409391595563,
+      "unadjusted_95pct_ci_pp": [
+        -3.956511959556862,
+        1.7338300812377492
+      ],
+      "p": 0.4439299752879843,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "contrast",
+      "effect_pp_per_sd": 0.8615061617129567,
+      "unadjusted_95pct_ci_pp": [
+        -3.408053071749362,
+        5.131065395175274
+      ],
+      "p": 0.6924894109797235,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "sharpness",
+      "effect_pp_per_sd": 2.185520009112634,
+      "unadjusted_95pct_ci_pp": [
+        -1.43632738455479,
+        5.807367402780058
+      ],
+      "p": 0.23693007912597241,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "entropy",
+      "effect_pp_per_sd": -1.650699227717615,
+      "unadjusted_95pct_ci_pp": [
+        -6.407446893482716,
+        3.1060484380474858
+      ],
+      "p": 0.49640827524054476,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "edge_density",
+      "effect_pp_per_sd": -0.6903370095086017,
+      "unadjusted_95pct_ci_pp": [
+        -4.496154316047777,
+        3.115480297030574
+      ],
+      "p": 0.7222017359545915,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": -0.25685957004895454,
+      "unadjusted_95pct_ci_pp": [
+        -1.9794607101023347,
+        1.4657415700044258
+      ],
+      "p": 0.770093122391175,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -0.17625088177062537,
+      "unadjusted_95pct_ci_pp": [
+        -2.206908918764065,
+        1.8544071552228143
+      ],
+      "p": 0.8649197015948262,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "luna_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": 0.18579006473569978,
+      "unadjusted_95pct_ci_pp": [
+        -1.0975596963387408,
+        1.4691398258101407
+      ],
+      "p": 0.7766071455007764,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_clef",
+      "kind": "paired_difference",
+      "feature": "brightness",
+      "effect_pp_per_sd": -3.236720699329777,
+      "unadjusted_95pct_ci_pp": [
+        -5.777992739812329,
+        -0.6954486588472235
+      ],
+      "p": 0.012548547175212067,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_clef",
+      "kind": "paired_difference",
+      "feature": "contrast",
+      "effect_pp_per_sd": -1.3633688369767492,
+      "unadjusted_95pct_ci_pp": [
+        -4.875544620623278,
+        2.14880694666978
+      ],
+      "p": 0.44676114462049354,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_clef",
+      "kind": "paired_difference",
+      "feature": "sharpness",
+      "effect_pp_per_sd": -1.7410155778570067,
+      "unadjusted_95pct_ci_pp": [
+        -5.023318529438432,
+        1.541287373724419
+      ],
+      "p": 0.2985193084023725,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_clef",
+      "kind": "paired_difference",
+      "feature": "entropy",
+      "effect_pp_per_sd": 0.36992661440564234,
+      "unadjusted_95pct_ci_pp": [
+        -4.1435567466332515,
+        4.883409975444537
+      ],
+      "p": 0.8723774940771061,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_clef",
+      "kind": "paired_difference",
+      "feature": "edge_density",
+      "effect_pp_per_sd": 0.6528665548763163,
+      "unadjusted_95pct_ci_pp": [
+        -3.021744205695593,
+        4.327477315448226
+      ],
+      "p": 0.7276704779094156,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_clef",
+      "kind": "paired_difference",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": -0.406370708166323,
+      "unadjusted_95pct_ci_pp": [
+        -1.9991559139257222,
+        1.1864144975930762
+      ],
+      "p": 0.617039999452735,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_clef",
+      "kind": "paired_difference",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -1.6106953287828611,
+      "unadjusted_95pct_ci_pp": [
+        -3.473902013229224,
+        0.2525113556635018
+      ],
+      "p": 0.09020077320365583,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_clef",
+      "kind": "paired_difference",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": -0.20909664920294632,
+      "unadjusted_95pct_ci_pp": [
+        -1.5940967799548198,
+        1.175903481548927
+      ],
+      "p": 0.7673062508833236,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1",
+      "kind": "paired_difference",
+      "feature": "brightness",
+      "effect_pp_per_sd": -0.8813946726251026,
+      "unadjusted_95pct_ci_pp": [
+        -3.224748105619614,
+        1.4619587603694086
+      ],
+      "p": 0.46100549122406786,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1",
+      "kind": "paired_difference",
+      "feature": "contrast",
+      "effect_pp_per_sd": -0.5857100353760374,
+      "unadjusted_95pct_ci_pp": [
+        -4.38132889256371,
+        3.2099088218116356
+      ],
+      "p": 0.7623119252174639,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1",
+      "kind": "paired_difference",
+      "feature": "sharpness",
+      "effect_pp_per_sd": 3.182680463762517,
+      "unadjusted_95pct_ci_pp": [
+        -0.27062269233601444,
+        6.635983619861048
+      ],
+      "p": 0.07086075145528183,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1",
+      "kind": "paired_difference",
+      "feature": "entropy",
+      "effect_pp_per_sd": 1.1951108439698006,
+      "unadjusted_95pct_ci_pp": [
+        -3.52149850527355,
+        5.911720193213152
+      ],
+      "p": 0.6194553006031956,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1",
+      "kind": "paired_difference",
+      "feature": "edge_density",
+      "effect_pp_per_sd": -3.326358188676478,
+      "unadjusted_95pct_ci_pp": [
+        -7.000866938556845,
+        0.34815056120388876
+      ],
+      "p": 0.07601977775770671,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1",
+      "kind": "paired_difference",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": 0.003559494730660806,
+      "unadjusted_95pct_ci_pp": [
+        -1.6644335795185896,
+        1.6715525689799111
+      ],
+      "p": 0.9966628095079397,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1",
+      "kind": "paired_difference",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -0.31849336856530375,
+      "unadjusted_95pct_ci_pp": [
+        -2.1908349391645237,
+        1.5538482020339162
+      ],
+      "p": 0.7388336321066711,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1",
+      "kind": "paired_difference",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": -0.0038993352445720257,
+      "unadjusted_95pct_ci_pp": [
+        -1.2958331190781176,
+        1.2880344485889736
+      ],
+      "p": 0.9952800658502102,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "brightness",
+      "effect_pp_per_sd": -0.6719031928448885,
+      "unadjusted_95pct_ci_pp": [
+        -2.944757319078832,
+        1.6009509333890546
+      ],
+      "p": 0.5623150365632199,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "contrast",
+      "effect_pp_per_sd": -4.514707091838879,
+      "unadjusted_95pct_ci_pp": [
+        -8.108669795330341,
+        -0.9207443883474178
+      ],
+      "p": 0.013812960728055637,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "sharpness",
+      "effect_pp_per_sd": 5.105565378242587,
+      "unadjusted_95pct_ci_pp": [
+        1.7928371921859982,
+        8.418293564299177
+      ],
+      "p": 0.002521995832555297,
+      "p_holm": 0.29759550824152503,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "entropy",
+      "effect_pp_per_sd": 2.0782322214890776,
+      "unadjusted_95pct_ci_pp": [
+        -1.5434780781170783,
+        5.699942521095234
+      ],
+      "p": 0.2607252255507909,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "edge_density",
+      "effect_pp_per_sd": -2.3580251835553065,
+      "unadjusted_95pct_ci_pp": [
+        -5.969376651271488,
+        1.2533262841608743
+      ],
+      "p": 0.20063137926373886,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": 0.08494403786777198,
+      "unadjusted_95pct_ci_pp": [
+        -1.3862951673710162,
+        1.55618324310656
+      ],
+      "p": 0.9099027230854204,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -1.6871975315970609,
+      "unadjusted_95pct_ci_pp": [
+        -3.5823990613474646,
+        0.2080039981533433
+      ],
+      "p": 0.0810106145439738,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "jev_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": 0.7725970460012542,
+      "unadjusted_95pct_ci_pp": [
+        -0.39750468204033174,
+        1.9426987740428403
+      ],
+      "p": 0.1956209234237667,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1",
+      "kind": "paired_difference",
+      "feature": "brightness",
+      "effect_pp_per_sd": 2.3553260267046743,
+      "unadjusted_95pct_ci_pp": [
+        0.11129627545595107,
+        4.599355777953397
+      ],
+      "p": 0.03966972618665711,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1",
+      "kind": "paired_difference",
+      "feature": "contrast",
+      "effect_pp_per_sd": 0.7776588016007117,
+      "unadjusted_95pct_ci_pp": [
+        -2.9053155071625323,
+        4.460633110363956
+      ],
+      "p": 0.6789870805653406,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1",
+      "kind": "paired_difference",
+      "feature": "sharpness",
+      "effect_pp_per_sd": 4.923696041619524,
+      "unadjusted_95pct_ci_pp": [
+        1.5549847857924952,
+        8.292407297446552
+      ],
+      "p": 0.004174358645608322,
+      "p_holm": 0.4883999615361737,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1",
+      "kind": "paired_difference",
+      "feature": "entropy",
+      "effect_pp_per_sd": 0.8251842295641594,
+      "unadjusted_95pct_ci_pp": [
+        -3.1310223050596138,
+        4.781390764187933
+      ],
+      "p": 0.6826801066859929,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1",
+      "kind": "paired_difference",
+      "feature": "edge_density",
+      "effect_pp_per_sd": -3.9792247435527943,
+      "unadjusted_95pct_ci_pp": [
+        -7.215611788911007,
+        -0.7428376981945817
+      ],
+      "p": 0.01596002836691633,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1",
+      "kind": "paired_difference",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": 0.40993020289698395,
+      "unadjusted_95pct_ci_pp": [
+        -1.1782325725139358,
+        1.9980929783079038
+      ],
+      "p": 0.6129282289597265,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1",
+      "kind": "paired_difference",
+      "feature": "central_detail",
+      "effect_pp_per_sd": 1.2922019602175572,
+      "unadjusted_95pct_ci_pp": [
+        -0.3723136199589786,
+        2.956717540394093
+      ],
+      "p": 0.12811801442296006,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1",
+      "kind": "paired_difference",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": 0.2051973139583743,
+      "unadjusted_95pct_ci_pp": [
+        -0.8523442973154247,
+        1.2627389252321732
+      ],
+      "p": 0.7037253531573205,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "brightness",
+      "effect_pp_per_sd": 2.5648175064848884,
+      "unadjusted_95pct_ci_pp": [
+        0.37489938367188735,
+        4.754735629297889
+      ],
+      "p": 0.021704672295924977,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "contrast",
+      "effect_pp_per_sd": -3.151338254862131,
+      "unadjusted_95pct_ci_pp": [
+        -7.0379919057312526,
+        0.7353153960069914
+      ],
+      "p": 0.11202456687553172,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "sharpness",
+      "effect_pp_per_sd": 6.846580956099594,
+      "unadjusted_95pct_ci_pp": [
+        3.518984419783147,
+        10.174177492416039
+      ],
+      "p": 5.5149984275804995e-05,
+      "p_holm": 0.0066179981130966,
+      "significant": true
+    },
+    {
+      "target": "clef_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "entropy",
+      "effect_pp_per_sd": 1.7083056070834362,
+      "unadjusted_95pct_ci_pp": [
+        -2.9558184079175205,
+        6.372429622084392
+      ],
+      "p": 0.4728397266662774,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "edge_density",
+      "effect_pp_per_sd": -3.010891738431623,
+      "unadjusted_95pct_ci_pp": [
+        -6.5733381191898514,
+        0.5515546423266058
+      ],
+      "p": 0.09761793899897346,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": 0.49131474603409525,
+      "unadjusted_95pct_ci_pp": [
+        -1.1516781748507712,
+        2.1343076669189616
+      ],
+      "p": 0.5578078842583672,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -0.07650220281419945,
+      "unadjusted_95pct_ci_pp": [
+        -1.8971781426767587,
+        1.74417373704836
+      ],
+      "p": 0.9343645086722538,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "clef_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": 0.9816936952042005,
+      "unadjusted_95pct_ci_pp": [
+        -0.30830671343242794,
+        2.271694103840829
+      ],
+      "p": 0.13582037197263605,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "brightness",
+      "effect_pp_per_sd": 0.2094914797802141,
+      "unadjusted_95pct_ci_pp": [
+        -2.025253704126071,
+        2.444236663686499
+      ],
+      "p": 0.8542231585605637,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "contrast",
+      "effect_pp_per_sd": -3.9289970564628427,
+      "unadjusted_95pct_ci_pp": [
+        -7.822299226403786,
+        -0.03569488652190034
+      ],
+      "p": 0.04793621092704453,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "sharpness",
+      "effect_pp_per_sd": 1.9228849144800693,
+      "unadjusted_95pct_ci_pp": [
+        -1.5220902250921862,
+        5.367860054052325
+      ],
+      "p": 0.2739572219247114,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "entropy",
+      "effect_pp_per_sd": 0.8831213775192766,
+      "unadjusted_95pct_ci_pp": [
+        -3.5465747006577604,
+        5.312817455696314
+      ],
+      "p": 0.6959849818057373,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "edge_density",
+      "effect_pp_per_sd": 0.9683330051211714,
+      "unadjusted_95pct_ci_pp": [
+        -2.5719046736591187,
+        4.508570683901461
+      ],
+      "p": 0.5918940479424784,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "detail_offset",
+      "effect_pp_per_sd": 0.08138454313711113,
+      "unadjusted_95pct_ci_pp": [
+        -1.5933365428008155,
+        1.7561056290750374
+      ],
+      "p": 0.9241192963059696,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "central_detail",
+      "effect_pp_per_sd": -1.3687041630317567,
+      "unadjusted_95pct_ci_pp": [
+        -3.287962675527999,
+        0.550554349464486
+      ],
+      "p": 0.16219327526571892,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "target": "d1_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "clipped_fraction",
+      "effect_pp_per_sd": 0.7764963812458261,
+      "unadjusted_95pct_ci_pp": [
+        -0.4177642701513661,
+        1.9707570326430182
+      ],
+      "p": 0.20253973599894148,
+      "p_holm": 1.0,
+      "significant": false
+    }
+  ],
+  "significant_tests": [
+    {
+      "target": "clef_minus_d1-ultra",
+      "kind": "paired_difference",
+      "feature": "sharpness",
+      "effect_pp_per_sd": 6.846580956099594,
+      "unadjusted_95pct_ci_pp": [
+        3.518984419783147,
+        10.174177492416039
+      ],
+      "p": 5.5149984275804995e-05,
+      "p_holm": 0.0066179981130966,
+      "significant": true
+    }
+  ],
+  "within_class_vif": {
+    "brightness": 1.2076913295894391,
+    "contrast": 3.051614200830957,
+    "sharpness": 3.1769151807402243,
+    "entropy": 3.306366894850134,
+    "edge_density": 3.7061486206916254,
+    "detail_offset": 1.051823435551333,
+    "central_detail": 1.0221274754660592,
+    "clipped_fraction": 1.3166471869908558
+  },
+  "descriptive_quartiles": {
+    "brightness": {
+      "cutoffs": [
+        0.32190088604084965,
+        0.46937721859204795
+      ],
+      "n": [
+        500,
+        500
+      ],
+      "unadjusted_accuracy": {
+        "luna": [
+          0.73,
+          0.83
+        ],
+        "jev": [
+          0.812,
+          0.85
+        ],
+        "clef": [
+          0.77,
+          0.84
+        ],
+        "d1": [
+          0.772,
+          0.802
+        ],
+        "d1-ultra": [
+          0.786,
+          0.858
+        ]
+      }
+    },
+    "contrast": {
+      "cutoffs": [
+        0.1095491211331117,
+        0.18401039312386477
+      ],
+      "n": [
+        500,
+        500
+      ],
+      "unadjusted_accuracy": {
+        "luna": [
+          0.804,
+          0.712
+        ],
+        "jev": [
+          0.852,
+          0.736
+        ],
+        "clef": [
+          0.806,
+          0.768
+        ],
+        "d1": [
+          0.794,
+          0.722
+        ],
+        "d1-ultra": [
+          0.856,
+          0.776
+        ]
+      }
+    },
+    "sharpness": {
+      "cutoffs": [
+        5.421799928530884,
+        7.263146142099315
+      ],
+      "n": [
+        500,
+        500
+      ],
+      "unadjusted_accuracy": {
+        "luna": [
+          0.756,
+          0.664
+        ],
+        "jev": [
+          0.784,
+          0.754
+        ],
+        "clef": [
+          0.724,
+          0.756
+        ],
+        "d1": [
+          0.74,
+          0.704
+        ],
+        "d1-ultra": [
+          0.818,
+          0.724
+        ]
+      }
+    },
+    "entropy": {
+      "cutoffs": [
+        6.506550570361662,
+        7.297021749900139
+      ],
+      "n": [
+        500,
+        500
+      ],
+      "unadjusted_accuracy": {
+        "luna": [
+          0.832,
+          0.672
+        ],
+        "jev": [
+          0.872,
+          0.738
+        ],
+        "clef": [
+          0.832,
+          0.764
+        ],
+        "d1": [
+          0.82,
+          0.704
+        ],
+        "d1-ultra": [
+          0.888,
+          0.75
+        ]
+      }
+    },
+    "edge_density": {
+      "cutoffs": [
+        0.1264236111111111,
+        0.3332159722222222
+      ],
+      "n": [
+        500,
+        500
+      ],
+      "unadjusted_accuracy": {
+        "luna": [
+          0.776,
+          0.634
+        ],
+        "jev": [
+          0.798,
+          0.748
+        ],
+        "clef": [
+          0.754,
+          0.748
+        ],
+        "d1": [
+          0.744,
+          0.704
+        ],
+        "d1-ultra": [
+          0.834,
+          0.704
+        ]
+      }
+    },
+    "detail_offset": {
+      "cutoffs": [
+        0.02101610974131806,
+        0.06534059801892922
+      ],
+      "n": [
+        500,
+        500
+      ],
+      "unadjusted_accuracy": {
+        "luna": [
+          0.688,
+          0.822
+        ],
+        "jev": [
+          0.772,
+          0.85
+        ],
+        "clef": [
+          0.736,
+          0.844
+        ],
+        "d1": [
+          0.72,
+          0.838
+        ],
+        "d1-ultra": [
+          0.732,
+          0.872
+        ]
+      }
+    },
+    "central_detail": {
+      "cutoffs": [
+        0.21619429287078556,
+        0.26894819491551436
+      ],
+      "n": [
+        500,
+        500
+      ],
+      "unadjusted_accuracy": {
+        "luna": [
+          0.736,
+          0.766
+        ],
+        "jev": [
+          0.76,
+          0.794
+        ],
+        "clef": [
+          0.742,
+          0.814
+        ],
+        "d1": [
+          0.748,
+          0.842
+        ],
+        "d1-ultra": [
+          0.76,
+          0.834
+        ]
+      }
+    },
+    "clipped_fraction": {
+      "cutoffs": [
+        0.00011666666666666667,
+        0.007776388888888889
+      ],
+      "n": [
+        504,
+        500
+      ],
+      "unadjusted_accuracy": {
+        "luna": [
+          0.7996031746031746,
+          0.71
+        ],
+        "jev": [
+          0.8373015873015873,
+          0.76
+        ],
+        "clef": [
+          0.8194444444444444,
+          0.762
+        ],
+        "d1": [
+          0.7976190476190477,
+          0.756
+        ],
+        "d1-ultra": [
+          0.8452380952380952,
+          0.776
+        ]
+      }
+    }
+  },
+  "caveats": [
+    "Exploratory associations, not causal effects or interventions.",
+    "Detail centroid and central edge share are proxies, not detected object positions.",
+    "Sharpness/entropy can reflect scene texture, not only acquisition quality.",
+    "Only the same 2,000 test images; no independent validation.",
+    "HC3 assumes independence between images; unknown geographic correlation is not modeled.",
+    "Confidence intervals shown are unadjusted; significance uses Holm-adjusted p values."
+  ],
+  "posthoc_sensitivity_checks": {
+    "log_laplacian": {
+      "effect_pp_per_sd": 6.84658095609959,
+      "descriptive_unadjusted_95pct_ci": [
+        3.5189844197831452,
+        10.174177492416037
+      ]
+    },
+    "rank_laplacian": {
+      "effect_pp_per_sd": 6.305629436316146,
+      "descriptive_unadjusted_95pct_ci": [
+        3.0767173616349757,
+        9.534541510997316
+      ]
+    },
+    "raw_laplacian": {
+      "effect_pp_per_sd": 2.097916475517822,
+      "descriptive_unadjusted_95pct_ci": [
+        -0.4882449001573419,
+        4.684077851192986
+      ]
+    },
+    "class_adjusted_only": {
+      "effect_pp_per_sd": 3.877015811064738,
+      "descriptive_unadjusted_95pct_ci": [
+        1.7888378747976836,
+        5.965193747331792
+      ]
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "luna/added-blur": {
+    "rows": 600,
+    "images_per_row": 1,
+    "origin_verified": true,
+    "sample_attachment_bytes_verified": true,
+    "replayed": 2,
+    "conditions": {
+      "original": 300,
+      "added_blur": 300
+    }
+  },
+  "luna/paired-sharpness": {
+    "rows": 600,
+    "images_per_row": 2,
+    "origin_verified": true,
+    "sample_attachment_bytes_verified": true,
+    "replayed": 2,
+    "conditions": {
+      "original_second": 300,
+      "original_first": 300
+    }
+  },
+  "jev/added-blur": {
+    "rows": 600,
+    "images_per_row": 1,
+    "origin_verified": true,
+    "sample_attachment_bytes_verified": true,
+    "replayed": 2,
+    "conditions": {
+      "original": 300,
+      "added_blur": 300
+    }
+  },
+  "jev/paired-sharpness": {
+    "rows": 600,
+    "images_per_row": 2,
+    "origin_verified": true,
+    "sample_attachment_bytes_verified": true,
+    "replayed": 2,
+    "conditions": {
+      "original_second": 300,
+      "original_first": 300
+    }
+  },
+  "clef/added-blur": {
+    "rows": 600,
+    "images_per_row": 1,
+    "origin_verified": true,
+    "sample_attachment_bytes_verified": true,
+    "replayed": 2,
+    "conditions": {
+      "original": 300,
+      "added_blur": 300
+    }
+  },
+  "d1/added-blur": {
+    "rows": 600,
+    "images_per_row": 1,
+    "origin_verified": true,
+    "sample_attachment_bytes_verified": true,
+    "replayed": 2,
+    "conditions": {
+      "original": 300,
+      "added_blur": 300
+    }
+  },
+  "d1/paired-sharpness": {
+    "rows": 600,
+    "images_per_row": 2,
+    "origin_verified": true,
+    "sample_attachment_bytes_verified": true,
+    "replayed": 2,
+    "conditions": {
+      "original_second": 300,
+      "original_first": 300
+    }
+  },
+  "d1-ultra/added-blur": {
+    "rows": 600,
+    "images_per_row": 1,
+    "origin_verified": true,
+    "sample_attachment_bytes_verified": true,
+    "replayed": 2,
+    "conditions": {
+      "original": 300,
+      "added_blur": 300
+    }
+  },
+  "d1-ultra/paired-sharpness": {
+    "rows": 600,
+    "images_per_row": 2,
+    "origin_verified": true,
+    "sample_attachment_bytes_verified": true,
+    "replayed": 2,
+    "conditions": {
+      "original_second": 300,
+      "original_first": 300
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-paired-sharpness__d1-ultra",
+  "n": 600,
+  "valid": 600,
+  "accuracy": 0.9966666666666667,
+  "cost": 0.030088800000000002,
+  "cost_convention": "Provider usage.cost for Liquid; token-rate estimates for other providers."
+}

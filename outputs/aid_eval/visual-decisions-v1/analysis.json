@@ -1,0 +1,528 @@
+{
+  "method": "300 independent source clusters; exact paired sign flips of per-source correct-count differences (two decisions/source); Holm across 20 planned model comparisons. 95% percentile bootstrap CIs resample source clusters, unadjusted. Both A/B orders included.",
+  "tasks": {
+    "added-blur": {
+      "luna": {
+        "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-added-blur__luna",
+        "n": 600,
+        "valid": 600,
+        "accuracy": 0.6233333333333333,
+        "cost": 0.033,
+        "accuracy_ci95": [
+          0.6,
+          0.6483333333333333
+        ],
+        "by_condition": {
+          "original": 0.25333333333333335,
+          "added_blur": 0.9933333333333333
+        },
+        "both_correct": 0.24666666666666667,
+        "false_positive_rate": 0.7466666666666667,
+        "brier": 0.24616,
+        "auroc": 0.9260833333333334
+      },
+      "jev": {
+        "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-added-blur__jev",
+        "n": 600,
+        "valid": 600,
+        "accuracy": 0.9483333333333334,
+        "cost": 0.035250096,
+        "accuracy_ci95": [
+          0.9316666666666666,
+          0.965
+        ],
+        "by_condition": {
+          "original": 0.9,
+          "added_blur": 0.9966666666666667
+        },
+        "both_correct": 0.8966666666666666,
+        "false_positive_rate": 0.1,
+        "brier": 0.09611083333333333,
+        "auroc": 0.994
+      },
+      "clef": {
+        "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-added-blur__clef",
+        "n": 600,
+        "valid": 600,
+        "accuracy": 0.9,
+        "cost": 0.08438399999999999,
+        "accuracy_ci95": [
+          0.8766666666666667,
+          0.9216666666666666
+        ],
+        "by_condition": {
+          "original": 0.93,
+          "added_blur": 0.87
+        },
+        "both_correct": 0.8033333333333333,
+        "false_positive_rate": 0.07,
+        "brier": 0.1106641618,
+        "auroc": 0.9701388888888889
+      },
+      "d1": {
+        "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-added-blur__d1",
+        "n": 600,
+        "valid": 600,
+        "accuracy": 0.9366666666666666,
+        "cost": 0.00804,
+        "cost_convention": "Provider usage.cost for Liquid; token-rate estimates for other providers.",
+        "accuracy_ci95": [
+          0.9166666666666666,
+          0.955
+        ],
+        "by_condition": {
+          "original": 0.9766666666666667,
+          "added_blur": 0.8966666666666666
+        },
+        "both_correct": 0.8733333333333333,
+        "false_positive_rate": 0.023333333333333334,
+        "brier": 0.08435886056978939,
+        "auroc": 0.9921388888888889
+      },
+      "d1-ultra": {
+        "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-added-blur__d1-ultra",
+        "n": 600,
+        "valid": 600,
+        "accuracy": 0.9366666666666666,
+        "cost": 0.016884,
+        "cost_convention": "Provider usage.cost for Liquid; token-rate estimates for other providers.",
+        "accuracy_ci95": [
+          0.9166666666666666,
+          0.9566666666666667
+        ],
+        "by_condition": {
+          "original": 0.9333333333333333,
+          "added_blur": 0.94
+        },
+        "both_correct": 0.8766666666666667,
+        "false_positive_rate": 0.06666666666666667,
+        "brier": 0.13871747769784676,
+        "auroc": 0.9844777777777778
+      }
+    },
+    "paired-sharpness": {
+      "luna": {
+        "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-paired-sharpness__luna",
+        "n": 600,
+        "valid": 600,
+        "accuracy": 0.9933333333333333,
+        "cost": 0.053399999999999996,
+        "accuracy_ci95": [
+          0.9866666666666667,
+          0.9983333333333333
+        ],
+        "by_condition": {
+          "original_first": 0.99,
+          "original_second": 0.9966666666666667
+        },
+        "both_correct": 0.9866666666666667,
+        "choose_A_rate": 0.49666666666666665,
+        "swap_consistency": 0.9866666666666667
+      },
+      "jev": {
+        "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-paired-sharpness__jev",
+        "n": 600,
+        "valid": 600,
+        "accuracy": 0.9966666666666667,
+        "cost": 0.05996768400000001,
+        "accuracy_ci95": [
+          0.9916666666666667,
+          1.0
+        ],
+        "by_condition": {
+          "original_first": 1.0,
+          "original_second": 0.9933333333333333
+        },
+        "both_correct": 0.9933333333333333,
+        "choose_A_rate": 0.5033333333333333,
+        "swap_consistency": 0.9933333333333333
+      },
+      "clef": {
+        "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-paired-sharpness__clef",
+        "n": 600,
+        "valid": 600,
+        "accuracy": 1.0,
+        "cost": 0.133056,
+        "accuracy_ci95": [
+          1.0,
+          1.0
+        ],
+        "by_condition": {
+          "original_first": 1.0,
+          "original_second": 1.0
+        },
+        "both_correct": 1.0,
+        "choose_A_rate": 0.5,
+        "swap_consistency": 1.0
+      },
+      "d1": {
+        "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-paired-sharpness__d1",
+        "n": 600,
+        "valid": 600,
+        "accuracy": 0.9966666666666667,
+        "cost": 0.014327999999999999,
+        "cost_convention": "Provider usage.cost for Liquid; token-rate estimates for other providers.",
+        "accuracy_ci95": [
+          0.9916666666666667,
+          1.0
+        ],
+        "by_condition": {
+          "original_first": 0.9966666666666667,
+          "original_second": 0.9966666666666667
+        },
+        "both_correct": 0.9933333333333333,
+        "choose_A_rate": 0.5,
+        "swap_consistency": 0.9933333333333333
+      },
+      "d1-ultra": {
+        "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-paired-sharpness__d1-ultra",
+        "n": 600,
+        "valid": 600,
+        "accuracy": 0.9966666666666667,
+        "cost": 0.030088800000000002,
+        "cost_convention": "Provider usage.cost for Liquid; token-rate estimates for other providers.",
+        "accuracy_ci95": [
+          0.9916666666666667,
+          1.0
+        ],
+        "by_condition": {
+          "original_first": 1.0,
+          "original_second": 0.9933333333333333
+        },
+        "both_correct": 0.9933333333333333,
+        "choose_A_rate": 0.5033333333333333,
+        "swap_consistency": 0.9933333333333333
+      }
+    }
+  },
+  "tests": [
+    {
+      "task": "added-blur",
+      "a": "luna",
+      "b": "jev",
+      "difference_pp": -32.5,
+      "ci95_pp": [
+        -35.16666666666667,
+        -29.833333333333336
+      ],
+      "p": 3.9827297778311267e-59,
+      "p_holm": 7.965459555662253e-58,
+      "significant": true
+    },
+    {
+      "task": "added-blur",
+      "a": "luna",
+      "b": "clef",
+      "difference_pp": -27.666666666666668,
+      "ci95_pp": [
+        -30.833333333333336,
+        -24.5
+      ],
+      "p": 1.0471498606236649e-39,
+      "p_holm": 1.7801547630602304e-38,
+      "significant": true
+    },
+    {
+      "task": "added-blur",
+      "a": "luna",
+      "b": "d1",
+      "difference_pp": -31.333333333333336,
+      "ci95_pp": [
+        -34.166666666666664,
+        -28.499999999999996
+      ],
+      "p": 5.903680004274658e-54,
+      "p_holm": 1.121699200812185e-52,
+      "significant": true
+    },
+    {
+      "task": "added-blur",
+      "a": "luna",
+      "b": "d1-ultra",
+      "difference_pp": -31.333333333333336,
+      "ci95_pp": [
+        -34.0,
+        -28.499999999999996
+      ],
+      "p": 5.903680004274658e-54,
+      "p_holm": 1.121699200812185e-52,
+      "significant": true
+    },
+    {
+      "task": "added-blur",
+      "a": "jev",
+      "b": "clef",
+      "difference_pp": 4.833333333333333,
+      "ci95_pp": [
+        2.5,
+        7.333333333333333
+      ],
+      "p": 0.00019416744168176993,
+      "p_holm": 0.003106679066908319,
+      "significant": true
+    },
+    {
+      "task": "added-blur",
+      "a": "jev",
+      "b": "d1",
+      "difference_pp": 1.1666666666666667,
+      "ci95_pp": [
+        -1.0,
+        3.5000000000000004
+      ],
+      "p": 0.3916029105474903,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "added-blur",
+      "a": "jev",
+      "b": "d1-ultra",
+      "difference_pp": 1.1666666666666667,
+      "ci95_pp": [
+        -0.6666666666666667,
+        3.0
+      ],
+      "p": 0.2962063685990871,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "added-blur",
+      "a": "clef",
+      "b": "d1",
+      "difference_pp": -3.6666666666666665,
+      "ci95_pp": [
+        -6.333333333333334,
+        -1.0
+      ],
+      "p": 0.012774595538064868,
+      "p_holm": 0.17884433753290815,
+      "significant": false
+    },
+    {
+      "task": "added-blur",
+      "a": "clef",
+      "b": "d1-ultra",
+      "difference_pp": -3.6666666666666665,
+      "ci95_pp": [
+        -6.333333333333334,
+        -1.1666666666666667
+      ],
+      "p": 0.009210489694554585,
+      "p_holm": 0.13815734541831876,
+      "significant": false
+    },
+    {
+      "task": "added-blur",
+      "a": "d1",
+      "b": "d1-ultra",
+      "difference_pp": 0.0,
+      "ci95_pp": [
+        -2.3333333333333335,
+        2.166666666666667
+      ],
+      "p": 0.9999999999999998,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "paired-sharpness",
+      "a": "luna",
+      "b": "jev",
+      "difference_pp": -0.33333333333333337,
+      "ci95_pp": [
+        -0.8333333333333334,
+        0.0
+      ],
+      "p": 0.5,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "paired-sharpness",
+      "a": "luna",
+      "b": "clef",
+      "difference_pp": -0.6666666666666667,
+      "ci95_pp": [
+        -1.3333333333333335,
+        -0.16666666666666669
+      ],
+      "p": 0.125,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "paired-sharpness",
+      "a": "luna",
+      "b": "d1",
+      "difference_pp": -0.33333333333333337,
+      "ci95_pp": [
+        -1.0,
+        0.33333333333333337
+      ],
+      "p": 0.625,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "paired-sharpness",
+      "a": "luna",
+      "b": "d1-ultra",
+      "difference_pp": -0.33333333333333337,
+      "ci95_pp": [
+        -1.1666666666666667,
+        0.5
+      ],
+      "p": 0.6875000000000002,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "paired-sharpness",
+      "a": "jev",
+      "b": "clef",
+      "difference_pp": -0.33333333333333337,
+      "ci95_pp": [
+        -0.8333333333333334,
+        0.0
+      ],
+      "p": 0.5,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "paired-sharpness",
+      "a": "jev",
+      "b": "d1",
+      "difference_pp": 0.0,
+      "ci95_pp": [
+        -0.5,
+        0.5
+      ],
+      "p": 1.0,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "paired-sharpness",
+      "a": "jev",
+      "b": "d1-ultra",
+      "difference_pp": 0.0,
+      "ci95_pp": [
+        -0.6666666666666667,
+        0.6666666666666667
+      ],
+      "p": 1.0,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "paired-sharpness",
+      "a": "clef",
+      "b": "d1",
+      "difference_pp": 0.33333333333333337,
+      "ci95_pp": [
+        0.0,
+        0.8333333333333334
+      ],
+      "p": 0.5,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "paired-sharpness",
+      "a": "clef",
+      "b": "d1-ultra",
+      "difference_pp": 0.33333333333333337,
+      "ci95_pp": [
+        0.0,
+        0.8333333333333334
+      ],
+      "p": 0.5,
+      "p_holm": 1.0,
+      "significant": false
+    },
+    {
+      "task": "paired-sharpness",
+      "a": "d1",
+      "b": "d1-ultra",
+      "difference_pp": 0.0,
+      "ci95_pp": [
+        -0.6666666666666667,
+        0.6666666666666667
+      ],
+      "p": 1.0,
+      "p_holm": 1.0,
+      "significant": false
+    }
+  ],
+  "significant_tests": [
+    {
+      "task": "added-blur",
+      "a": "luna",
+      "b": "jev",
+      "difference_pp": -32.5,
+      "ci95_pp": [
+        -35.16666666666667,
+        -29.833333333333336
+      ],
+      "p": 3.9827297778311267e-59,
+      "p_holm": 7.965459555662253e-58,
+      "significant": true
+    },
+    {
+      "task": "added-blur",
+      "a": "luna",
+      "b": "clef",
+      "difference_pp": -27.666666666666668,
+      "ci95_pp": [
+        -30.833333333333336,
+        -24.5
+      ],
+      "p": 1.0471498606236649e-39,
+      "p_holm": 1.7801547630602304e-38,
+      "significant": true
+    },
+    {
+      "task": "added-blur",
+      "a": "luna",
+      "b": "d1",
+      "difference_pp": -31.333333333333336,
+      "ci95_pp": [
+        -34.166666666666664,
+        -28.499999999999996
+      ],
+      "p": 5.903680004274658e-54,
+      "p_holm": 1.121699200812185e-52,
+      "significant": true
+    },
+    {
+      "task": "added-blur",
+      "a": "luna",
+      "b": "d1-ultra",
+      "difference_pp": -31.333333333333336,
+      "ci95_pp": [
+        -34.0,
+        -28.499999999999996
+      ],
+      "p": 5.903680004274658e-54,
+      "p_holm": 1.121699200812185e-52,
+      "significant": true
+    },
+    {
+      "task": "added-blur",
+      "a": "jev",
+      "b": "clef",
+      "difference_pp": 4.833333333333333,
+      "ci95_pp": [
+        2.5,
+        7.333333333333333
+      ],
+      "p": 0.00019416744168176993,
+      "p_holm": 0.003106679066908319,
+      "significant": true
+    }
+  ],
+  "total_cost": 0.46839858
+}

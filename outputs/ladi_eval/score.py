@@ -5,6 +5,7 @@ Prediction: {"id":"test:0","status":"ok","probabilities":{...},"latency_ms":42}
 Failures must have status != ok and omit probabilities. One file per model.
 Requires numpy. Does not call providers or infer missing outputs.
 """
+
 import argparse
 import json
 import math
@@ -51,10 +52,13 @@ def score(truth, predictions):
         ):
             raise ValueError(f"Invalid probabilities: {key}")
         valid.append(key)
-    report = {"total_images": len(truth), "valid_images": len(valid),
-              "coverage": len(valid) / len(truth),
-              "quality_denominator": "complete valid images only; compare coverage alongside quality",
-              "latency_observations": len(latencies)}
+    report = {
+        "total_images": len(truth),
+        "valid_images": len(valid),
+        "coverage": len(valid) / len(truth),
+        "quality_denominator": "complete valid images only; compare coverage alongside quality",
+        "latency_observations": len(latencies),
+    }
     if latencies:
         report.update({f"latency_ms_p{p}": float(np.percentile(latencies, p)) for p in (50, 95)})
     if not valid:
@@ -66,18 +70,31 @@ def score(truth, predictions):
     fp = (~y & pred).sum(axis=0)
     fn = (y & ~pred).sum(axis=0)
     support = y.sum(axis=0)
+
     def divide(a, b):
         return np.divide(a, b, out=np.zeros_like(a, dtype=float), where=b != 0)
-    precision = divide(tp, tp+fp)
-    recall = divide(tp, tp+fn)
-    f1 = divide(2*tp, 2*tp+fp+fn)
-    report.update(macro_f1=float(f1.mean()),
-                  micro_f1=float(divide(2*tp.sum(), (2*tp+fp+fn).sum())),
-                  brier_score=float(np.mean((p-y.astype(float))**2)),
-                  exact_match=float(np.all(y == pred, axis=1).mean()))
-    report["per_label"] = {label: {"precision": float(precision[i]), "recall": float(recall[i]),
-        "f1": float(f1[i]), "positive_support": int(support[i])} for i, label in enumerate(LABELS)}
-    report["zero_division_policy"] = "precision, recall, F1 set to zero when undefined; inspect support"
+
+    precision = divide(tp, tp + fp)
+    recall = divide(tp, tp + fn)
+    f1 = divide(2 * tp, 2 * tp + fp + fn)
+    report.update(
+        macro_f1=float(f1.mean()),
+        micro_f1=float(divide(2 * tp.sum(), (2 * tp + fp + fn).sum())),
+        brier_score=float(np.mean((p - y.astype(float)) ** 2)),
+        exact_match=float(np.all(y == pred, axis=1).mean()),
+    )
+    report["per_label"] = {
+        label: {
+            "precision": float(precision[i]),
+            "recall": float(recall[i]),
+            "f1": float(f1[i]),
+            "positive_support": int(support[i]),
+        }
+        for i, label in enumerate(LABELS)
+    }
+    report["zero_division_policy"] = (
+        "precision, recall, F1 set to zero when undefined; inspect support"
+    )
     return report
 
 
@@ -86,4 +103,8 @@ if __name__ == "__main__":
     parser.add_argument("truth")
     parser.add_argument("predictions")
     args = parser.parse_args()
-    print(json.dumps(score(read_rows(args.truth), read_rows(args.predictions)), indent=2, allow_nan=False))
+    print(
+        json.dumps(
+            score(read_rows(args.truth), read_rows(args.predictions)), indent=2, allow_nan=False
+        )
+    )

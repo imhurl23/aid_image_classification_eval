@@ -1,0 +1,21 @@
+{
+  "unique_review_images": 1000,
+  "model_rows_removed_from_queue": 5000,
+  "prior_labels_imported": 3,
+  "conflicts_to_relabel": {
+    "7ba8a34ade50768446e112a9c353a253b25fedafb459723b217cd65f8fd01e26": [
+      "Commercial",
+      "Industrial"
+    ],
+    "219ff54aa46eea4a1122a76c16a2fa1c1e4bd93c5116c85ed4fe8608cfdd05c1": [
+      "Other",
+      "Viaduct"
+    ],
+    "a6fbee895d98fe4a57011aeee55fee0801b73a5b6bdfb45cd543129880d91ecc": [
+      "School",
+      "SparseResidential"
+    ]
+  },
+  "rubric_version": 1,
+  "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/review?v=Web%20images%20%E2%80%94%20label%20once"
+}

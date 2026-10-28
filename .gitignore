@@ -8,6 +8,8 @@ __pycache__/
 venv/
 .cache/
 .DS_Store
+.ruff_cache/
+.pytest_cache/
 # Image data and model weights remain local
 *.jpg
 *.jpeg
@@ -24,3 +26,6 @@ work/*
 !work/aid/
 work/aid/*
 !work/aid/*.py
+
+# Local image-directory symlinks are not portable artifacts
+outputs/**/images

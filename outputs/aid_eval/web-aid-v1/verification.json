@@ -1,0 +1,22 @@
+{
+  "review_logs": 1000,
+  "inference_logs": 1000,
+  "model_predictions": 5000,
+  "dataset_rows": 1000,
+  "sample_attachment_hash_checks": 10,
+  "valid_by_model": {
+    "luna": 985,
+    "jev": 1000,
+    "clef": 1000,
+    "d1": 1000,
+    "d1-ultra": 1000
+  },
+  "final_estimated_api_cost_usd": 0.378893752,
+  "superseded_padding_attempt_cost_usd": 0.006035212,
+  "total_estimated_api_cost_usd": 0.384928964,
+  "cost_before_reconciliation": {
+    "final_estimated_api_cost_usd": 0.390039712,
+    "superseded_padding_attempt_cost_usd": 0.006212332,
+    "total_estimated_api_cost_usd": 0.39625204399999997
+  }
+}

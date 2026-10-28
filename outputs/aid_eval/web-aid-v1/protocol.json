@@ -1,0 +1,8 @@
+{
+  "target_images": 1000,
+  "source": "Wikimedia Commons public image search",
+  "categories_are_search_targets_not_labels": true,
+  "image_policy": "Download Commons width-600 thumbnail where available; preserve aspect ratio, orient from EXIF, RGB lossless PNG, longest side <=600, no upscaling/cropping; identical bytes to all five models. Original source URL and dimensions retained. Images with a side below 280 are centered on neutral-gray padding to minimum 280 per side, without further resizing; all five models rerun on the same padded bytes.",
+  "duplicates": "Reject exact PNG SHA256 matches, repeated Commons page IDs, and dHash Hamming distance <=2.",
+  "human_review": "True category is blank. Review once per image; permit Ambiguous, Other, NotAerial, Unusable. No accuracy until human labels exist."
+}

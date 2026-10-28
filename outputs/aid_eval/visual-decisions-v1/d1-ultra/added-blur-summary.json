@@ -1,0 +1,8 @@
+{
+  "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/experiments/visual-decisions-v1-added-blur__d1-ultra",
+  "n": 600,
+  "valid": 600,
+  "accuracy": 0.9366666666666666,
+  "cost": 0.016884,
+  "cost_convention": "Provider usage.cost for Liquid; token-rate estimates for other providers."
+}

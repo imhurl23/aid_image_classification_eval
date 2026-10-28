@@ -1,0 +1,15 @@
+{
+  "rows": 5000,
+  "images": 1000,
+  "rows_per_model": {
+    "luna": 1000,
+    "jev": 1000,
+    "clef": 1000,
+    "d1": 1000,
+    "d1-ultra": 1000
+  },
+  "new_inference_calls": 0,
+  "native_messages": true,
+  "existing_human_labels_preserved": true,
+  "url": "https://www.braintrust.dev/app/eval_engineering/p/aid-single-label-comparison/logs?v=Web%20images%20%E2%80%94%20human%20category%20review"
+}

@@ -1,0 +1,8 @@
+{
+  "rows": 1000,
+  "model_answers": 5000,
+  "native_messages_verified": true,
+  "images_and_human_labels_preserved": true,
+  "new_inference_calls": 0,
+  "review_blinding": "Predictions now visible; future human labels are not blind."
+}
