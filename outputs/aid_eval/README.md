@@ -7,6 +7,7 @@ Start with the [repository setup](../../README.md#quick-start). Commands below r
 ```sh
 python outputs/aid_eval/native_eval.py \
   --models luna jev clef d1 d1-ultra \
+  --instructions-file outputs/aid_eval/controlled-definitions-v1/prompt.txt \
   --run-name my-five-model-01 \
   --env-file .env
 ```
@@ -18,6 +19,8 @@ The runner uses `braintrust.Eval` with the remote dataset, a model task, and `ac
 | `--dataset` | Defaults to `aid-test-2000`; use `aid-validation-pilot-30` for integration checks. |
 | `--dataset-version` | Reuse an exact dataset version; otherwise pin the current version at startup. |
 | `--cases-file` | Frozen local cases for a custom dataset. |
+| `--instructions-file` | Exact frozen question text; recorded in the manifest and validated against a protocol prompt hash when supplied. Omitting it retains the historical short prompt. |
+| `--images-dir` | Optional local image cache, verified against frozen hashes; remote attachment references remain in the traces. |
 | `--protocol-file` | Record the custom transformation protocol in the run manifest. |
 | `--trials` | Fresh calls per image, default 1. Analyze repeated trials at image level. |
 | `--max-concurrency` | Concurrent tasks, default 6. |
@@ -37,6 +40,26 @@ The five `native-fresh-01-*` runs use dataset version `1000198073523310044`, cor
 An audit found 95 test files and one pilot file with `.jpg` names but PNG bytes. Earlier runs labeled those bytes as JPEG. `repair_image_types.py` published correctly typed attachments without changing bytes, labels, or row IDs. Treat this as a transport difference when comparing old and new experiments.
 
 ## Controlled blur, contrast, and shifts
+
+### Current definitions-matched experiment
+
+`controlled-definitions-v1` repeats all seven conditions with the exact `aid-definitions-v1` prompt used for the newer main results. Every model gets 300 fresh clean controls and 1,800 fresh transformed inputs: **10,500 new predictions** in total. It reuses the frozen `aid-controlled-300-v1` dataset version `1000198078684663546` and identical image hashes. The clean control is specific to each model and this 300-source experiment; the 2,000-image leaderboard and earlier no-definitions controls are never used to calculate its deltas.
+
+```sh
+# Offline preflight: verify prompt, 2,100 local image hashes, and all provider payloads.
+python outputs/aid_eval/run_robustness.py
+# Execute once; existing runs require explicit --resume to recover missing calls.
+python outputs/aid_eval/run_robustness.py --execute --env-file .env
+python outputs/aid_eval/analyze_robustness.py --run-prefix controlled-definitions-v1
+python outputs/aid_eval/plot_robustness.py
+python outputs/aid_eval/verify_robustness.py --env-file .env
+```
+
+Local images must exist in `controlled-300-v1/images/`. `--liquid-key-file` is optional when the Liquid key is already in the credentials file or environment. Run names and the prompt are frozen by `controlled-definitions-v1/protocol.json`; use a new version for another fresh experiment.
+
+[Results](controlled-definitions-v1/results.md), [accuracy chart](controlled-definitions-v1/accuracy-deltas.png), and [calibration chart](controlled-definitions-v1/calibration-deltas.png) include paired, class-stratified bootstrap intervals. Analysis rejects mismatched prompts, dataset versions, trial counts, and transformation protocols. Accuracy counts invalid outputs as incorrect. Calibration uses each model's common valid-source intersection across all conditions, so refusals cannot silently change which images are compared between conditions. The inference remains one call per case; intervals quantify image-sampling uncertainty, not repeated-call variation.
+
+### Historical experiment without definitions
 
 `prepare_robustness.py` selects 10 test images per class by a frozen SHA256 seed, independent of predictions. Seven conditions produce 2,100 rows: control, Gaussian blur radii 1/2, contrast factors 0.5/1.5, and horizontal shifts of 60 pixels in either direction with reflected fill. Controls and variants are 600×600 lossless RGB PNGs.
 

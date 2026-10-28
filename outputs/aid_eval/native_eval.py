@@ -38,7 +38,8 @@ def valid_output(output):
     return int(output["status"] == "ok")
 
 
-def request_payload(arm, raw, keys):
+def request_payload(arm, raw, keys, instructions=None):
+    instructions = protocol.INSTRUCTIONS if instructions is None else instructions
     with Image.open(io.BytesIO(raw)) as im:
         image_format = im.format
     mime = {"JPEG": "image/jpeg", "PNG": "image/png", "WEBP": "image/webp"}[image_format]
@@ -53,7 +54,7 @@ def request_payload(arm, raw, keys):
                 "questions": {
                     "scene": {
                         "type": "choice",
-                        "instructions": protocol.INSTRUCTIONS,
+                        "instructions": instructions,
                         "criteria": {label: label for label in LABELS},
                     }
                 },
@@ -62,10 +63,12 @@ def request_payload(arm, raw, keys):
     if arm != "clef":
         url, key, headers, body = protocol.payload(arm, raw, LABELS)
         if arm == "luna":
+            body["questions"][0]["instructions"] = instructions
             body["input"][0]["content"][0]["image_url"] = (
                 "data:" + mime + ";base64," + base64.b64encode(raw).decode()
             )
         else:
+            body["questions"]["scene"]["instructions"] = instructions
             for asset in body["assets"].values():
                 asset["format"] = {"JPEG": "jpg", "PNG": "png", "WEBP": "webp"}[image_format]
         return url, {**headers, "Authorization": "Bearer " + keys[key]}, body
@@ -85,7 +88,7 @@ def request_payload(arm, raw, keys):
             "questions": {
                 "scene": {
                     "type": "choice",
-                    "instructions": protocol.INSTRUCTIONS,
+                    "instructions": instructions,
                     "criteria": {label: label for label in LABELS},
                 }
             },
@@ -93,8 +96,9 @@ def request_payload(arm, raw, keys):
     )
 
 
-def predict(arm, raw, keys, image):
-    url, headers, body = request_payload(arm, raw, keys)
+def predict(arm, raw, keys, image, instructions=None):
+    instructions = protocol.INSTRUCTIONS if instructions is None else instructions
+    url, headers, body = request_payload(arm, raw, keys, instructions=instructions)
     result = {
         "status": "api_error",
         "requested_model": MODELS[arm],
@@ -105,7 +109,7 @@ def predict(arm, raw, keys, image):
     with bt.start_span(
         name=arm,
         type="llm",
-        input={"image": image, "instructions": protocol.INSTRUCTIONS, "labels": LABELS},
+        input={"image": image, "instructions": instructions, "labels": LABELS},
         metadata={"model": MODELS[arm], "provider": "cloudflare" if arm == "clef" else arm},
     ) as span:
         for attempt in range(3):
@@ -181,6 +185,12 @@ def main():
         "--cases-file", type=Path, help="Frozen manifest for an explicitly prepared dataset"
     )
     p.add_argument("--protocol-file", type=Path, help="Experiment transformation protocol")
+    p.add_argument(
+        "--instructions-file", type=Path, help="Frozen prompt used identically for every image"
+    )
+    p.add_argument(
+        "--images-dir", type=Path, help="Optional local image cache; every file is hash-checked"
+    )
     p.add_argument("--trials", type=int, default=1)
     p.add_argument("--max-concurrency", type=int, default=6)
     p.add_argument("--base-experiment", default="test-2000-rerun-01__jev")
@@ -191,6 +201,11 @@ def main():
         or args.max_concurrency < 1
     ):
         p.error("Invalid run name, trials, or concurrency")
+    instructions = (
+        args.instructions_file.read_text() if args.instructions_file else protocol.INSTRUCTIONS
+    )
+    if not instructions.strip():
+        p.error("Instructions must not be empty")
     keys = keys_load(args.env_file, args.liquid_key_file)
     validate_keys(keys, args.models)
     bt.login(api_key=keys["BRAINTRUST_API_KEY"])
@@ -216,16 +231,21 @@ def main():
         "dataset_version": version,
         "models": args.models,
         "trials": args.trials,
-        "instructions": protocol.INSTRUCTIONS,
+        "instructions": instructions,
         "labels": LABELS,
         "image_policy": "Original image bytes, detected MIME type; no client resizing; provider preprocessing applies",
         "prices_per_million_input_tokens": PRICES,
         "retry_policy": "3 attempts; 429/5xx and transport errors",
         "scoring": "Failed requests count as incorrect; same 30-way choice validation as original eval",
     }
+    if args.instructions_file:
+        manifest["instructions_sha256"] = hashlib.sha256(instructions.encode()).hexdigest()
     if args.protocol_file:
         manifest["transform_protocol"] = json.loads(args.protocol_file.read_text())
         manifest["image_policy"] = manifest["transform_protocol"]["image_policy"]
+        expected_prompt = manifest["transform_protocol"].get("prompt_sha256")
+        if expected_prompt and hashlib.sha256(instructions.encode()).hexdigest() != expected_prompt:
+            raise ValueError("Instructions do not match the frozen protocol")
     manifest_path = out / "native-manifest.json"
     if manifest_path.exists():
         if not args.resume:
@@ -260,19 +280,22 @@ def main():
                 metadata["replayed_prediction"] = True
                 metadata["original_experiment"] = args.run_name + "__" + arm
             else:
-                for download_attempt in range(3):
-                    try:
-                        raw = image.data
-                        break
-                    except RuntimeError:
-                        if download_attempt == 2:
-                            raise RuntimeError(
-                                "Attachment download failed after three attempts"
-                            ) from None
-                        time.sleep(2**download_attempt)
-                        image = bt.ReadonlyAttachment(image.reference)
+                if args.images_dir:
+                    raw = (args.images_dir / byid[metadata["source_id"]]["image"]).read_bytes()
+                else:
+                    for download_attempt in range(3):
+                        try:
+                            raw = image.data
+                            break
+                        except RuntimeError:
+                            if download_attempt == 2:
+                                raise RuntimeError(
+                                    "Attachment download failed after three attempts"
+                                ) from None
+                            time.sleep(2**download_attempt)
+                            image = bt.ReadonlyAttachment(image.reference)
                 assert hashlib.sha256(raw).hexdigest() == metadata["sha256"]
-                result = predict(arm, raw, keys, image)
+                result = predict(arm, raw, keys, image, instructions=instructions)
             result.update(id=metadata["source_id"], trial_index=hooks.trial_index)
             for field in ("original_id", "condition", "scene_class"):
                 if field in metadata:
@@ -300,7 +323,7 @@ def main():
             experiment_name=args.run_name + "__" + arm + ("__resumed" if args.resume else ""),
             trial_count=args.trials,
             max_concurrency=args.max_concurrency,
-            base_experiment_name=args.base_experiment,
+            base_experiment_name=args.base_experiment or None,
             metadata=manifest,
             description="Native Eval: pinned AID images, frozen instructions and labels.",
         )

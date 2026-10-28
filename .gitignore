@@ -29,3 +29,8 @@ work/aid/*
 
 # Local image-directory symlinks are not portable artifacts
 outputs/**/images
+
+# Evaluation process logs; structured audit exports remain tracked
+outputs/**/*.log
+# Published chart images
+!outputs/aid_eval/controlled-definitions-v1/*-deltas.png

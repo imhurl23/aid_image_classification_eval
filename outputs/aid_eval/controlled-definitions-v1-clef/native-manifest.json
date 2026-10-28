@@ -1,0 +1,95 @@
+{
+  "dataset": "aid-controlled-300-v1",
+  "dataset_version": "1000198078684663546",
+  "models": [
+    "clef"
+  ],
+  "trials": 1,
+  "instructions": "Classify the overall aerial scene in the image into exactly one of the supplied AID scene classes. Select the class that best describes the scene as a whole, rather than every object visible. Use only the image.\n\nUse the following class descriptions. Keep the supplied class names as the output choices.\n\nAirport: An aviation facility with runways, taxiways, aprons, terminals, or parked aircraft.\nBareLand: Exposed soil or rock with little vegetation, often showing clearing, grading, excavation, or other human disturbance.\nBaseballField: A baseball or softball playing area recognizable by a diamond-shaped infield and a fan-shaped outfield.\nBeach: A sandy or pebbly strip along a shoreline, with adjacent water and exposed shore forming the main scene.\nBridge: A road or railway structure crossing water or another obstacle, with the crossing itself as the principal feature.\nCenter: A public cultural or event center, such as a theater, generally organized around a prominent purpose-built building.\nChurch: A church building or church complex, recognizable from its religious architecture and surrounding grounds.\nCommercial: A commercial area occupied mainly by shops, offices, or business complexes and their associated access and parking.\nDenseResidential: A residential neighborhood with closely packed buildings and relatively little open ground between them.\nDesert: An arid landscape dominated by sand, rock, or dry ground, with sparse vegetation and few visible signs of land modification.\nFarmland: Land organized for agriculture, with cultivated fields, crop rows, orchards, or recognizable agricultural parcels.\nForest: Land dominated by a broad, continuous or closely grouped cover of trees.\nIndustrial: An area of factories, production facilities, warehouses, service yards, or industrial equipment.\nMeadow: Open land dominated by grass or low herbaceous vegetation, without a clear pattern of crop cultivation.\nMediumResidential: A residential neighborhood with noticeable spacing between buildings and a mixture of housing, gardens, trees, and open ground.\nMountain: A landscape dominated by mountainous relief, such as ridges, peaks, and steep slopes, whether vegetated, rocky, or snowy.\nPark: A landscaped recreation area with paths, vegetation, and leisure or amusement facilities.\nParking: An area whose principal function is vehicle parking, recognizable from organized parking spaces, aisles, or rows of parked vehicles.\nPlayground: An outdoor sports field, running track, or playing area without the prominent surrounding spectator stands characteristic of a stadium.\nPond: A contained inland body of standing water, including a natural or constructed pond or a group of ponds.\nPort: A harbor, marina, or shipping facility with docks, piers, berths, or vessels beside sheltered water.\nRailwayStation: A railway facility centered on station platforms, train sheds, parallel tracks, or associated rail yards.\nResort: A vacation or leisure accommodation complex, often with villas or lodging buildings arranged among landscaped recreation facilities.\nRiver: An elongated natural watercourse, with a connected channel and banks forming the principal scene.\nSchool: An educational campus whose buildings, courtyards, internal paths, and possible sports facilities form a coherent school complex.\nSparseResidential: A residential area with a small number of widely separated homes and extensive open land, gardens, or vegetation between them.\nSquare: A public plaza or formal civic open space, often with organized paving, paths, monuments, or geometric landscaping.\nStadium: A sports venue with substantial spectator stands arranged around a playing field or arena.\nStorageTanks: A storage facility dominated by large tanks, often circular or cylindrical and arranged in groups.\nViaduct: An extended elevated road or railway, or a grade-separated road interchange with flyovers and connecting ramps.\n",
+  "labels": [
+    "Airport",
+    "BareLand",
+    "BaseballField",
+    "Beach",
+    "Bridge",
+    "Center",
+    "Church",
+    "Commercial",
+    "DenseResidential",
+    "Desert",
+    "Farmland",
+    "Forest",
+    "Industrial",
+    "Meadow",
+    "MediumResidential",
+    "Mountain",
+    "Park",
+    "Parking",
+    "Playground",
+    "Pond",
+    "Port",
+    "RailwayStation",
+    "Resort",
+    "River",
+    "School",
+    "SparseResidential",
+    "Square",
+    "Stadium",
+    "StorageTanks",
+    "Viaduct"
+  ],
+  "image_policy": "All controls and transformed variants are 600x600 RGB lossless PNG; control preserves decoded RGB pixels; no resizing.",
+  "prices_per_million_input_tokens": {
+    "luna": 0.1,
+    "jev": 0.042,
+    "clef": 0.24,
+    "d1": 0.04,
+    "d1-ultra": 0.042
+  },
+  "retry_policy": "3 attempts; 429/5xx and transport errors",
+  "scoring": "Failed requests count as incorrect; same 30-way choice validation as original eval",
+  "instructions_sha256": "12e2b2b58a973300a03c8c307366cefa37488dce365152bb2852d08115a5ea1b",
+  "transform_protocol": {
+    "selection": "10 per class from test, lowest SHA256(seed+filename); independent of predictions",
+    "seed": "aid-controlled-20261022-v1",
+    "images": 300,
+    "conditions": [
+      "control",
+      "blur_1",
+      "blur_2",
+      "contrast_0.5",
+      "contrast_1.5",
+      "shift_left_60",
+      "shift_right_60"
+    ],
+    "variant_rows": 2100,
+    "image_policy": "All controls and transformed variants are 600x600 RGB lossless PNG; control preserves decoded RGB pixels; no resizing.",
+    "transformations": {
+      "blur": "Pillow GaussianBlur radius 1 or 2 pixels",
+      "contrast": "Pillow ImageEnhance.Contrast factors 0.5 and 1.5",
+      "shift": "60 pixels left/right with reflected fill; crops 60 original boundary pixels, so this is not pure object-position isolation"
+    },
+    "analysis": "Paired accuracy changes vs fresh control; McNemar tests; pairwise differences of change via paired randomization; Holm across 30 within-model and 60 between-model tests.",
+    "notes": [
+      "Equal-class balanced subset; accuracy is not directly comparable to the full test split.",
+      "Ground truth held fixed; stronger transforms may remove discriminative evidence.",
+      "Single stochastic response per model/image/condition; repeat on independent data to confirm."
+    ],
+    "experiment": "controlled-definitions-v1",
+    "prompt_condition": "aid-definitions-v1",
+    "prompt_sha256": "12e2b2b58a973300a03c8c307366cefa37488dce365152bb2852d08115a5ea1b",
+    "case_manifest_sha256": "3d1f6fe4bc546ac861c4825bf2da3e07ffb42d417e6c3f918fefdca11fe1a625",
+    "dataset": "aid-controlled-300-v1",
+    "dataset_version": "1000198078684663546",
+    "models": [
+      "luna",
+      "jev",
+      "clef",
+      "d1",
+      "d1-ultra"
+    ],
+    "trials": 1,
+    "control": "Fresh clean PNG predictions with the same definitions prompt as every transformation; never use full-test or historical accuracy as the control.",
+    "max_concurrency_per_model": 6
+  }
+}

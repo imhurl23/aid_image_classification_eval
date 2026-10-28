@@ -1,0 +1,43 @@
+{
+  "selection": "10 per class from test, lowest SHA256(seed+filename); independent of predictions",
+  "seed": "aid-controlled-20261022-v1",
+  "images": 300,
+  "conditions": [
+    "control",
+    "blur_1",
+    "blur_2",
+    "contrast_0.5",
+    "contrast_1.5",
+    "shift_left_60",
+    "shift_right_60"
+  ],
+  "variant_rows": 2100,
+  "image_policy": "All controls and transformed variants are 600x600 RGB lossless PNG; control preserves decoded RGB pixels; no resizing.",
+  "transformations": {
+    "blur": "Pillow GaussianBlur radius 1 or 2 pixels",
+    "contrast": "Pillow ImageEnhance.Contrast factors 0.5 and 1.5",
+    "shift": "60 pixels left/right with reflected fill; crops 60 original boundary pixels, so this is not pure object-position isolation"
+  },
+  "analysis": "Paired accuracy changes vs fresh control; McNemar tests; pairwise differences of change via paired randomization; Holm across 30 within-model and 60 between-model tests.",
+  "notes": [
+    "Equal-class balanced subset; accuracy is not directly comparable to the full test split.",
+    "Ground truth held fixed; stronger transforms may remove discriminative evidence.",
+    "Single stochastic response per model/image/condition; repeat on independent data to confirm."
+  ],
+  "experiment": "controlled-definitions-v1",
+  "prompt_condition": "aid-definitions-v1",
+  "prompt_sha256": "12e2b2b58a973300a03c8c307366cefa37488dce365152bb2852d08115a5ea1b",
+  "case_manifest_sha256": "3d1f6fe4bc546ac861c4825bf2da3e07ffb42d417e6c3f918fefdca11fe1a625",
+  "dataset": "aid-controlled-300-v1",
+  "dataset_version": "1000198078684663546",
+  "models": [
+    "luna",
+    "jev",
+    "clef",
+    "d1",
+    "d1-ultra"
+  ],
+  "trials": 1,
+  "control": "Fresh clean PNG predictions with the same definitions prompt as every transformation; never use full-test or historical accuracy as the control.",
+  "max_concurrency_per_model": 6
+}

@@ -4,3 +4,7 @@ numpy
 Pillow
 scipy
 statsmodels
+
+# Reproducible robustness charts
+matplotlib
+pandas

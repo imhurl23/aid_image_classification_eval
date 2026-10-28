@@ -16,6 +16,7 @@ cp .env.example .env
 # Start with the 30-image validation integration pilot.
 python outputs/aid_eval/native_eval.py \
   --models clef \
+  --instructions-file outputs/aid_eval/controlled-definitions-v1/prompt.txt \
   --dataset aid-validation-pilot-30 \
   --run-name my-clef-pilot-01 \
   --env-file .env
@@ -47,13 +48,15 @@ For maintenance scripts, set `AID_ENV_FILE=/absolute/path/to/credentials.env` an
 | --- | --- |
 | Native scene classification, retries, scoring, and recovery | [AID guide](outputs/aid_eval/README.md) |
 | Fresh five-model comparison | [Comparison export](outputs/aid_eval/native-fresh-01-comparison.json) |
-| Controlled blur, contrast, and shifts | [Protocol and results](outputs/aid_eval/controlled-300-v1/results.md) |
+| Controlled blur, contrast, and shifts | [Definitions-matched results](outputs/aid_eval/controlled-definitions-v1/results.md) |
 | Added-blur detection and paired sharpness | [Results](outputs/aid_eval/visual-decisions-v1/results.md) |
 | Web-image collection and human category review | [Review workflow](outputs/aid_eval/README.md#web-images-and-human-review) |
 | Specialist baseline on 382 shared held-out images | [AiTLAS findings](outputs/aid_eval/specialist/aitlas/findings.txt) |
 | Earlier multilabel disaster-image evaluation | [LADI guide](outputs/ladi_eval/README.md) |
 
 The AID split is a fixed community partition: 6,000 train / 2,000 validation / 2,000 test. It is not the original paper's benchmark protocol. Native runs pin a Braintrust dataset version, check it against a local manifest, and hash-check image bytes before inference. Accuracy counts failed or invalid outputs as incorrect; valid-only metrics are labeled separately.
+
+The current robustness study uses the same frozen class definitions as the newer main results, with fresh controls on the same 300 sources as all six transformations. [Earlier no-definitions results](outputs/aid_eval/controlled-300-v1/results.md) remain historical and are not its baseline.
 
 Costs are recorded per prediction. Liquid uses valid provider-reported `usage.cost`, falling back to configured token rates when absent. Other providers use configured estimates. Rates in the code describe these experiments and should be checked before budgeting a new run. Replayed rows are historical predictions; summing all experiments does not measure unique API spend.
 

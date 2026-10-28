@@ -1,0 +1,13 @@
+{
+  "images_verified": 2100,
+  "sources": 300,
+  "prompt_sha256": "12e2b2b58a973300a03c8c307366cefa37488dce365152bb2852d08115a5ea1b",
+  "provider_payloads_verified": [
+    "luna",
+    "jev",
+    "clef",
+    "d1",
+    "d1-ultra"
+  ],
+  "api_calls": 0
+}
