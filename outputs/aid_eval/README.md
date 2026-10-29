@@ -16,6 +16,7 @@ The runner uses `braintrust.Eval` with the remote dataset, a model task, and `ac
 
 | Option | Meaning |
 | --- | --- |
+| `--project` | Your Braintrust project name; defaults to the historical project name. |
 | `--dataset` | Defaults to `aid-test-2000`; use `aid-validation-pilot-30` for integration checks. |
 | `--dataset-version` | Reuse an exact dataset version; otherwise pin the current version at startup. |
 | `--cases-file` | Frozen local cases for a custom dataset. |
@@ -24,7 +25,7 @@ The runner uses `braintrust.Eval` with the remote dataset, a model task, and `ac
 | `--protocol-file` | Record the custom transformation protocol in the run manifest. |
 | `--trials` | Fresh calls per image, default 1. Analyze repeated trials at image level. |
 | `--max-concurrency` | Concurrent tasks, default 6. |
-| `--base-experiment` | UI comparison baseline, default `test-2000-rerun-01__jev`. Choose a matching split. |
+| `--base-experiment` | Optional UI comparison baseline in your project. Choose a matching split. |
 | `--resume` | Replay saved predictions into a recovery experiment; call only missing cases. |
 
 Use a new run name for fresh predictions. Resume requires the same manifest, including dataset version, model list, and trial count. Replayed rows are marked and do not create fresh model-call spans. API requests and attachment downloads retry up to three times for supported transient failures.
@@ -125,7 +126,7 @@ python outputs/aid_eval/web_aid_eval.py --score-reviewed
 
 Synchronization propagates each authoritative label to the five model rows and inference root, updating `human_category_accuracy`. It also clears that score when a label is removed or excluded. Scoring publishes a versioned `web-aid-v1-human-reviewed` dataset and evaluates cached predictions without new model calls. Unreviewed and excluded images are not counted as wrong. These commands run manually, not on a schedule.
 
-The older **Web images — human category review** view and model review queue show predictions and are not blind review. `publish_model_review_rows.py` maintains those cached presentations. `setup_label_once.py` migrates the historical queue, imports unanimous prior labels, and flags disagreements for reassessment. Queue setup scripts contain the original project/reviewer IDs and are migration utilities, not general setup commands for another account.
+The older **Web images — human category review** view and model review queue show predictions and are not blind review. `publish_model_review_rows.py` maintains those cached presentations. `setup_label_once.py --reviewer-id YOUR_BRAINTRUST_USER_ID` migrates the historical queue, imports unanimous prior labels, and flags disagreements for reassessment. Queue setup scripts retain the original project IDs and require an explicit reviewer ID; they are migration utilities, not general setup commands for another account.
 
 Each scored dataset version is reconciled against the current eligible labels. Removing a label or changing it to an exclusion removes that image from the next dataset version; prior versions and experiment results remain historical.
 
@@ -145,7 +146,6 @@ Other `repair_*`, `cleanup_*`, `setup_*`, and publishing scripts can mutate hist
 - `full_test.py`: historical Luna/Jev 2,000-image runner. Downloads images, resumes saved outputs, and publishes results. Use a fresh `--run-name` for fresh calls.
 - `test-2000/`: original full run, with 74.30% Luna and 79.40% Jev accuracy and historical combined estimated cost of $0.2885. Named reruns remain separate.
 - `specialist/aitlas/`: verified ResNet-50 baseline on the **382-image shared held-out intersection**. Of our 2,000 test images, 1,217 occur in AiTLAS training and 401 in its validation split; the full set is unsuitable for this checkpoint. See [findings and provenance](specialist/aitlas/findings.txt). Do not compare the 382-image specialist score to full-test API scores.
-- `team_travel_eval.py`: illustrative photos without reference labels, excluded from benchmark scores. Requires `--source-dir` and `--instructions-file`; the frozen prompt hash is checked. Use `AID_ENV_FILE` for credentials.
 
 The original student checkpoint investigation in `specialist/findings.txt` remains historical; AiTLAS supplied the usable split manifests. Model weights are not committed. Specialist inference additionally requires `torch` and `torchvision`.
 

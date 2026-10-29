@@ -34,3 +34,24 @@ outputs/**/images
 outputs/**/*.log
 # Published chart images
 !outputs/aid_eval/controlled-definitions-v1/*-deltas.png
+
+# Private gallery, reviewer snapshots, and downloaded research (kept locally)
+/outputs/aid_eval/team_travel_eval.py
+/outputs/aid_eval/team-travel-v1/
+/outputs/aid_eval/assign_model_reviews.py
+/outputs/aid_eval/specialist/papers/
+/outputs/aid_eval/specialist/author-request.txt
+/outputs/aid_eval/web-aid-v1/before-label-once-review.json
+/outputs/aid_eval/web-aid-v1/review-queue-verification.json
+
+# Local releases, downloads, and packaging output
+/dist/
+/build/
+*.egg-info/
+*.pem
+*.key
+*.zip
+*.tar
+*.tar.gz
+*.pdf
+/outputs/aid_eval/aid-definitions-v1-shared-errors/

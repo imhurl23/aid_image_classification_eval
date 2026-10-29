@@ -1,0 +1,10 @@
+{
+  "repo_id": "BraintrustDataDev/aid-evaluation-results",
+  "url": "https://huggingface.co/datasets/BraintrustDataDev/aid-evaluation-results",
+  "revision": "4a0d7552503663be799d512bc26ef2c1f9b2a167",
+  "public": true,
+  "images_included": false,
+  "prediction_rows": 30500,
+  "checksummed_files_verified": 17,
+  "all_configs_load_anonymously": true
+}

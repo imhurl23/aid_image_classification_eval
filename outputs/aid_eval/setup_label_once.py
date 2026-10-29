@@ -1,5 +1,6 @@
 """Replace repetitive model review assignments with one authoritative image review."""
 
+import argparse
 import json
 
 from labeling_guide import GUIDE
@@ -8,11 +9,14 @@ from publish_model_review_rows import P, model_review_rows
 from sync_image_labels import label_of
 from web_aid_eval import OUT, PROJECT, REVIEW_FIELD, api, keys_load, review_rows
 
-USER = "REVIEWER_USER_ID"
 NAME = "Web images — label once"
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--reviewer-id", required=True, help="Braintrust user ID to assign")
+    args = parser.parse_args()
+    reviewer = args.reviewer_id
     k = keys_load()
     masters = review_rows(k, P)
     models = model_review_rows(k)
@@ -57,7 +61,7 @@ def main():
                 "name": "Label image once" + (" — needs another look" if len(labels) > 1 else "")
             },
             "metadata": {
-                "~__bt_assignments": [USER],
+                "~__bt_assignments": [reviewer],
                 "~__bt_review_lists": {"__bt_default_review_list": {"status": "PENDING"}},
                 "canonical_human_label": True,
                 "label_rubric_version": 1,
@@ -81,7 +85,9 @@ def main():
                 "_is_merge": True,
                 "_merge_paths": [["metadata", "~__bt_review_lists"]],
                 "metadata": {
-                    "~__bt_assignments": [u for u in m.get("~__bt_assignments", []) if u != USER],
+                    "~__bt_assignments": [
+                        u for u in m.get("~__bt_assignments", []) if u != reviewer
+                    ],
                     "~__bt_review_lists": None,
                     "prior_review_queue_state": m.get("~__bt_review_lists"),
                     "label_from_image_review": True,

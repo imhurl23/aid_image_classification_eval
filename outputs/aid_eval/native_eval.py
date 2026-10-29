@@ -179,6 +179,7 @@ def main():
     p.add_argument("--models", nargs="+", choices=list(MODELS), default=["clef"])
     p.add_argument("--run-name", required=True)
     add_credential_arguments(p)
+    p.add_argument("--project", default=CONFIG["project"], help="Your Braintrust project name")
     p.add_argument("--dataset", default="aid-test-2000")
     p.add_argument("--dataset-version")
     p.add_argument(
@@ -193,7 +194,7 @@ def main():
     )
     p.add_argument("--trials", type=int, default=1)
     p.add_argument("--max-concurrency", type=int, default=6)
-    p.add_argument("--base-experiment", default="test-2000-rerun-01__jev")
+    p.add_argument("--base-experiment", help="Optional comparison experiment in your project")
     args = p.parse_args()
     if (
         not re.fullmatch(r"[A-Za-z0-9_-]+", args.run_name)
@@ -209,11 +210,9 @@ def main():
     keys = keys_load(args.env_file, args.liquid_key_file)
     validate_keys(keys, args.models)
     bt.login(api_key=keys["BRAINTRUST_API_KEY"])
-    dataset = bt.init_dataset(
-        project=CONFIG["project"], name=args.dataset, version=args.dataset_version
-    )
+    dataset = bt.init_dataset(project=args.project, name=args.dataset, version=args.dataset_version)
     version = dataset.version
-    dataset = bt.init_dataset(project=CONFIG["project"], name=args.dataset, version=version)
+    dataset = bt.init_dataset(project=args.project, name=args.dataset, version=version)
     rows = list(dataset.fetch())
     # Check the remote frozen split against the original manifest before any model calls.
     source = BASE / ("test-2000-rerun-01" if args.dataset == "aid-test-2000" else "")
@@ -316,7 +315,7 @@ def main():
             return {k: v for k, v in result.items() if k != "response"}
 
         result = bt.Eval(
-            CONFIG["project"],
+            args.project,
             data=dataset,
             task=task,
             scores=[accuracy, valid_output],
